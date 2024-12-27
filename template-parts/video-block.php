@@ -8,7 +8,7 @@ $videoUrl = get_sub_field('video_url');
         
 
         <div class="flex flex-col gap-[26px] w-full max-w-[750px]">
-            <div class="w-full shadow-lg mx-auto rounded-md lg:h-[480px] flex justify-center items-center bg-white relative">
+            <div class="w-full shadow-lg mx-auto rounded-md lg:h-[480px] flex justify-center items-center  relative" style="box-shadow: 0px 30px 40px 0px rgba(45, 54, 70, 0.06);">
                 <video id="hero-video-desktop" loop controls poster="<?php echo $poster;?>" preload="none" playsinline webkit-playsinline class="w-[99%] h-[99%] object-cover">
                     <source src="<?php echo $videoUrl; ?>" type="video/mp4">
                     <!--<source data-src="<?php echo $videoUrl; ?>" type="video/mp4">-->

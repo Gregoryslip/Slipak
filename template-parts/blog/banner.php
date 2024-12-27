@@ -14,16 +14,16 @@ if ($cat){
     $img = get_field('banner__image');
 }
 ?>
-<section class="hero-small hero-small--small">
-    <div class="hero-small__inner">
-        <div class="hero-small__text">
-            <div class="breadcrumbs">
+<section class=" bg-white mt-[80]">
+  <div class="w-full flex flex-col items-center">
+    <div class="breadcrumbs w-full text-center">
                 <?php  get_template_part('template-parts/breadcrumbs'); ?>
             </div>
-            <h1><?= $title; ?></h1>
-        </div>
-    </div>
-    <div class="hero-small__img">
-        <?= wp_get_attachment_image($img['id'], [1920, 420]); ?>
-    </div>
+            <h1 class="mt-[20px]"><?= $title; ?></h1>
+            <div class="flex content-center">
+              <?php  get_template_part('template-parts/blog/search-form'); ?>
+            </div>
+            
+  </div>
+
 </section>

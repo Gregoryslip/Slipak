@@ -5,6 +5,11 @@ $btn = get_field('header__button', 'option');
 $myAccount = get_field('header__my-account', 'option');
 $ID = get_the_ID();
 $menu = 'header__menu';
+
+$param = isset($args['param']) ? $args['param'] : null;
+$bg = ($param === 'bg-white') ? '#fff' : '#F7F9FA';
+
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -413,10 +418,15 @@ $menu = 'header__menu';
             1px 1px 0 white;
     }
 
-    .submenu {
+    ul.submenu {
         position: absolute;
         z-index: 200;
-        width: 200px;
+        width: 330px;
+    }
+
+    ul.submenu li{
+        margin-left: 0 !important;
+        margin-right: 0 !important;
     }
 
     .hover-link:hover {
@@ -425,9 +435,8 @@ $menu = 'header__menu';
 </style>
 
 <body class="<?= is_singular('brixx_news') ? 'brixx-news single-page ' : ''; ?>preload page-id-<?= $ID; ?>">
-
-    <div class="h-[80px] lg:h-[82px] bg-[#F7F9FA]"></div>
-    <header class="w-full bg-[#F7F9FA] z-[99] fixed top-0">
+    <div class="h-[80px] lg:h-[82px] bg-[<?= $bg; ?>]"></div>
+    <header class="w-full bg-[<?= $bg; ?>] z-[99] fixed top-0">
         <div class="w-full max-w-[1442px] mx-auto py-5 flex justify-between px-4 2xl:px-0">
             <div class="flex flex-1 items-center gap-4 2xl:gap-[34px] w-full xl:w-fit justify-between xl:justify-start">
 			<!-- BUSINESS DOCTOR LOGO OVERRIDE -->

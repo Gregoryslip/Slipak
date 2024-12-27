@@ -15,6 +15,7 @@ function enqueue_scripts()
     // wp_enqueue_script('tw', 'https://cdn.tailwindcss.com', false, null, false);
     // wp_enqueue_style('style', $theme_url . '/style.css', array(), $ver);
     wp_enqueue_style('style', $theme_url . '/tw-override.css', array(), $ver);
+    wp_enqueue_style('customizing', $theme_url . '/customizing.css', array('style'), $ver);
 
 
 
@@ -27,6 +28,10 @@ function enqueue_scripts()
     wp_enqueue_script('jquery-ui-touch-punch', 'https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js', array('jquery-ui'), null, true);
 
     wp_enqueue_script('js',      $theme_url . '/assets/js/main.js',    array('jquery'), $ver, true);
+    wp_enqueue_script('custom-js',      $theme_url . '/assets/js/customize.js',    array('js'), $ver, true);
+    if (is_single()) {
+      wp_enqueue_script('single-js',      $theme_url . '/assets/js/single.js',    array('js'), $ver, true);
+    }
     wp_enqueue_script('pricing', $theme_url . '/assets/js/pricing.js', array('jquery'), $ver, true);
     wp_enqueue_style('pricing',  $theme_url . '/assets/css/pricing.css', array(),       $ver);
     //wp_enqueue_style('menu',  $theme_url . '/menu.css', array(),       $ver);

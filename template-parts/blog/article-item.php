@@ -47,7 +47,7 @@ if($isTemplate !== false){
         </div>
         <div class="archive-card__foot">
             <?php if($isTemplate === false): ?>
-                <a href="<?= $link; ?>" class="link">Read more</a>
+                <a href="<?= $link; ?>" class="link uppercase">READ FULL ARTICLE</a>
             <?php else: ?>
                 <?php if($btn): ?>
                     <a href="<?= $btn['url']; ?>" class="btn btn--orange-border" target="<?= $btn['target']; ?>"><?= $btn['title']; ?></a>

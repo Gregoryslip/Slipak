@@ -10,7 +10,7 @@
         <div class="flex flex-col gap-[26px] max-w-[848px] text-center items-center mx-auto">
             <h2 class="text-3xl md:text-5xl text-[#2D3646] font-medium"><?php echo esc_html($title); ?></h2>
             <span class="px-[14px] uppercase bg-[#E2E8ED] w-fit rounded-sm  lh-[34px] text-base font-semibold"><?php echo esc_html($sub); ?></span>
-            <p class="mt-2 opacity-70 text-[#424A5D] max-w-[625px] text-base"><?php echo esc_html($text); ?></p>
+            <p class="mt-2 opacity-70 text-[#424A5D] max-w-[625px] text-[20px]"><?php echo esc_html($text); ?></p>
         </div>
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">

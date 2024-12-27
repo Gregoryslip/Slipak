@@ -8,30 +8,21 @@ $cat = $cat? $cat[0] : '';
 $date = get_the_modified_date('j F Y');
 $thumbnailID = get_post_thumbnail_id();
 ?>
-<section class="article">
-    <div class="article__title">
-        <h1><?= $title; ?></h1>
-        <div class="article__info">
-            <?php if($cat): ?>
-                <a href="<?= get_term_link($cat); ?>" class="article__type with-sm-mt">
-                    <?= $cat->name; ?>
-                </a>
-            <?php endif; ?>
-            <?php if($authors): ?>
-                <div class="article__date with-sm-mt">
-                    Written by
-                    <a href="<?= get_term_link($authors[0]); ?>" class="article__type">
-                        <?= $authors[0]->name; ?>
-                    </a>
-                </div>
-            <?php endif; ?>
-            <div class="article__date with-sm-mt">
-                <?= $date; ?>
-            </div>
-        </div>
+<section class="article bg-[#f7f9fa]">
+  <section class="content">
+     <div class="">
+      <img src="<?= get_the_post_thumbnail_url(null, 'full');?>" alt="" class="w-full">
     </div>
-
+  </section>
+   
     <div class="article__outer">
+        <div class="article__right">
+            <?php
+                get_template_part('template-parts/post-builder/download-template');
+                //get_template_part('template-parts/post-builder/related-articles', false, ['cat' => $cat]);
+                //get_template_part('template-parts/post-builder/newsletter-form');
+            ?>
+        </div>
         <div class="article__inner">
             <div class="article__img">
                 <?= wp_get_attachment_image($thumbnailID, [644, 360]); ?>
@@ -50,16 +41,10 @@ $thumbnailID = get_post_thumbnail_id();
 				//END
 
                 get_template_part('template-parts/post-builder');
-                get_template_part('template-parts/post-builder/social-network-share');
+                //get_template_part('template-parts/post-builder/social-network-share');
             ?>
         </div>
 
-        <div class="article__right">
-            <?php
-                get_template_part('template-parts/post-builder/download-template');
-                get_template_part('template-parts/post-builder/related-articles', false, ['cat' => $cat]);
-                //get_template_part('template-parts/post-builder/newsletter-form');
-            ?>
-        </div>
+     
     </div>
 </section>

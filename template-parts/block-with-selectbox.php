@@ -11,7 +11,7 @@ $selectbox = get_sub_field('selectbox');
                     <h2 class="text-3xl md:text-5xl text-[#2D3646] font-medium"><?= $selectbox['title']; ?></h2>
                     <span class="px-[14px] uppercase bg-[#E2E8ED] w-fit rounded-sm lh-[34px] text-base font-semibold"><?= $selectbox['subtitle']; ?></span>
                 </div>
-                <p class="text-[#424A5D] opacity-70 text-center text-base"><?= $selectbox['description']; ?></p>
+                <p class="text-[#424A5D] opacity-70 text-center "><?= $selectbox['description']; ?></p>
             </div>
             <!-- <form action="#" class="flex gap-5 w-full max-w-[625px] flex-col md:flex-row">
                 <select name="business_type" id="select" class="px-[30px] py-[15px] rounded-sm shadow-md w-full md:max-w-[354px] text-[18px] lh-[28px] font-semibold">

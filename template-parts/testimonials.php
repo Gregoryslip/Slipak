@@ -45,7 +45,7 @@
 
                     }?>
             <div class="testimonials__slider_first swiper">
-                <div class="swiper-wrapper py-2">
+                <div class="swiper-wrapper py-20">
                     <?php
 
                     if( $first_half_query->have_posts() ): ?>
@@ -55,12 +55,13 @@
                             $company = get_field('testimonial_company');
                             $logo = get_field('testimonial_company_logo');
                         ?>
-                        <div class="flex flex-col justify-between p-[30px] w-full max-w-[514px] h-[290px] rounded-md shadow-md bg-white swiper-slide testimonial-outer-container">
+                        <div class="flex flex-col justify-between p-[30px] w-full max-w-[514px] h-[290px] rounded-md bg-white swiper-slide testimonial-outer-container" style="box-shadow: 0px 30px 40px 0px rgba(45, 54, 70, 0.06);
+">
                             <div class="flex flex-col gap-[9px] w-full justify-between h-full">
                                 <div class="w-full flex flex-col gap-[10px]">
                                     <img src="<?= $rating; ?>" class="!h-[22px]" alt="">
                                     <div class="flex h-[138px] flex-col gap-[10px] overflow-hidden testimonial-inner-content">
-                                        <span class="uppercase text-[#A7B1BD] font-semibold"><?= $company; ?> & brix</span>
+                                        <span class="uppercase text-[#A7B1BD] font-semibold text-base"><?= $company; ?> & brix</span>
                                         <h3 class="text-[18px] text-[#2D3646] font-semibold"><?php the_title(); ?></h3>
                                         
                                         
@@ -102,12 +103,13 @@
                             $company = get_field('testimonial_company');
                             $logo = get_field('testimonial_company_logo');
                         ?>
-                        <div class="flex flex-col justify-between p-[30px] w-full max-w-[514px] h-[290px] rounded-md shadow-md bg-white swiper-slide testimonial-outer-container">
+                        <div class="flex flex-col justify-between p-[30px] w-full max-w-[514px] h-[290px] rounded-md bg-white swiper-slide testimonial-outer-container" style="box-shadow: 0px 30px 40px 0px rgba(45, 54, 70, 0.06);
+">
                             <div class="flex flex-col gap-[9px] w-full justify-between h-full">
                                 <div class="w-full flex flex-col gap-[10px]">
                                     <img src="<?= $rating; ?>" class="!h-[22px]" alt="">
                                     <div class="flex h-[138px] flex-col gap-[10px] overflow-hidden testimonial-inner-content">
-                                        <span class="uppercase text-[#A7B1BD] font-semibold"><?= $company; ?> & brix</span>
+                                        <span class="uppercase text-[#A7B1BD] font-semibold text-base"><?= $company; ?> & brix</span>
                                         <h3 class="text-[18px] text-[#2D3646] font-semibold"><?php the_title(); ?></h3>
                                         
                                         

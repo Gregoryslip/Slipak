@@ -9,7 +9,7 @@
     <div class="flex flex-col gap-[30px] max-w-[425px] mx-auto text-center px-4 sm:px-0">
         <h2 class="text-[#2D3646] font-medium text-lg"><?php echo esc_html($title); ?></h2>
         <a href="<?php echo esc_url($btn_url); ?>">
-            <button type="button" class="bg-[#FF4713] px-[30px] py-4 rounded-sm transition-transform hover:scale-105 text-white w-fit mx-auto">
+            <button type="button" class="bg-[#FF4713] px-[30px] py-[16.5px] rounded-sm transition-transform hover:scale-105 text-white w-fit mx-auto" style="box-shadow: 0px 4px 4px 0px rgba(45, 54, 70, 0.06);">
                 <?php echo esc_html($btn_title); ?>
             </button>
         </a>

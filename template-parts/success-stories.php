@@ -9,7 +9,7 @@
     $author = get_sub_field('success_stories_video_author');
     $author_position = get_sub_field('success_stories_video_author_position');
 ?>
-<section class="w-full py-20 lg:pt-[190px] lg:pb-[180px] bg-[#F7F9FA] relative overflow-y-hidden">
+<section class="w-full py-20 lg:pt-[190px] lg:pb-[80px] bg-[#F7F9FA] relative overflow-y-hidden">
     <img src="/wp-content/uploads/2024/10/Group-2015-1.png" alt="background" class="absolute translate-x-2/4 right-[50%] w-full">
     <div class="max-w-[1442px] mx-auto flex flex-col gap-10 lg:gap-20 relative z-10 px-4 2xl:px-0">
         <div class="w-full flex flex-col md:flex-row gap-3 items-center justify-between">
@@ -19,14 +19,14 @@
             </div>
             <div class="flex flex-col lg:flex-row gap-5 min-w-[265px]">
                 <a href="<?php echo esc_url($btn['url']); ?>">
-                    <button type="button" class="w-fit bg-[#FF4713] text-white rounded-sm py-[13px] px-[30px] transition-transform hover:scale-105 flex gap-[10px] items-center uppercase">
+                    <button type="button" class="w-fit bg-[#FF4713] text-white rounded-sm py-[9px] px-[30px] transition-transform hover:scale-105 flex gap-[10px] items-center uppercase" style="box-shadow: 0px 4px 4px 0px rgba(45, 54, 70, 0.06);">
                         <?php echo esc_html($btn['title']); ?>
                         <img src="/wp-content/uploads/2024/10/arrow-external.svg" alt="icon">
                     </button>
                 </a>                
                 <div class="hidden lg:flex gap-[10px]">
-                    <button type="button" class="h-[44px] p-[9px] rounded-sm shadow-md bg-white opacity-70 success-stories__prev"><img src="/wp-content/uploads/2024/10/arrow-left-1-1-1.svg" alt="icon-left"></button>
-                    <button type="button" class="h-[44px] p-[9px] rounded-sm shadow-md transition-transform hover:scale-105 bg-white success-stories__next"><img src="/wp-content/uploads/2024/10/arrow-left-1-1.svg" alt="icon-right"></button>
+                    <button type="button" class="h-[44px] p-[9px] rounded-sm  bg-white opacity-70 success-stories__prev"><img src="/wp-content/uploads/2024/10/arrow-left-1-1-1.svg" alt="icon-left"></button>
+                    <button type="button" class="h-[44px] p-[9px] rounded-sm  transition-transform hover:scale-105 bg-white success-stories__next"><img src="/wp-content/uploads/2024/10/arrow-left-1-1.svg" alt="icon-right"></button>
                 </div>
             </div>
         </div>
@@ -60,7 +60,7 @@
             <?php 
             if($stories){?>
             <div class="swiper success-stories__slider">
-                <div class="swiper-wrapper">
+                <div class="swiper-wrapper pb-[80px]">
 
                 
             <?php
@@ -74,7 +74,7 @@
                     $icon = get_field('customer-story__icon', $story);
                     $link = get_the_permalink($story); 
                     ?>
-                    <div class="flex flex-col justify-between pt-[30px] pl-10 pr-[30px] pb-[28px] w-full max-w-[412px] h-[520px] rounded-md shadow-md bg-white swiper-slide">
+                    <div class="flex flex-col justify-between pt-[30px] pl-10 pr-[30px] pb-[28px] w-full max-w-[412px] h-[520px] rounded-md bg-white swiper-slide" style="box-shadow: 0px 30px 40px 0px rgba(45, 54, 70, 0.06);">
                         <div class="flex flex-col gap-[26px]">
                             <div class="w-full flex justify-end">
                                 <a href="<?= $link; ?>" class="flex gap-1.5 items-center transition-transform hover:translate-x-2 text-[#79808B] uppercase text-[15px] font-semibold">
@@ -84,7 +84,7 @@
                             </div>
                             <div class="flex flex-col gap-[10px] max-w-[330px]">
                                 <span class="uppercase text-[#A7B1BD] font-semibold text-base"><?= $title; ?> & Brixx</span>
-                                <h3 class="text-[24px] text-[#2D3646] font-semibold"><?= $story_title; ?></h3>
+                                <h3 class="text-[24px] leading-[32px] text-[#2D3646] font-semibold"><?= $story_title; ?></h3>
                                 <p class="opacity-70 text-[#424A5D] text-base"><?= $description; ?></p>
                             </div>
                         </div>

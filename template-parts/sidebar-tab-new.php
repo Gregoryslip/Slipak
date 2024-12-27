@@ -11,14 +11,14 @@
             view features
             <img src="/wp-content/uploads/2024/10/arrow-external.svg" alt="icon">
         </button>
-        <div class="w-full border-b border-[#A7B1BD]">
+        <div class=" border-b border-[#A7B1BD]">
             <div class="flex w-full items-start justify-between pt-[9px] max-w-[1442px] mx-auto" id="tabsHeader">
-                <div class="flex w-full">
+                <div class="flex ">
                     <?php if( have_rows('sidebar_tab_item') ): ?>
                         <?php while( have_rows('sidebar_tab_item') ): the_row(); 
                             $title = get_sub_field('title'); 
                         ?>
-                            <h3 class="px-1 sm:px-[30px] py-[10px] text-[#2D3646] font-semibold pb-[18px] opacity-70 cursor-pointer text-sm sm:text-base"><?php echo esc_html($title); ?></h3>
+                            <h3 class="px-1 sm:px-[30px] py-[10px] text-[#2D3646] font-semibold pb-[18px] opacity-70 cursor-pointer text-sm sm:!text-[20px]"><?php echo esc_html($title); ?></h3>
                         <?php endwhile; ?>
                     <?php endif; ?>
                 </div>
@@ -47,13 +47,13 @@
                         <div class="flex flex-col gap-[26px]">
                             <h3 class="text-[20px] md:text-[48px] font-semibold text-[#2D3646]"><?php echo esc_html($title); ?></h3>
                             <span class="px-[14px] uppercase bg-[#E2E8ED] w-fit rounded-sm  lh-[34px] text-base font-semibold"><?php echo esc_html($desc); ?></span>
-                            <p class="text-[#424A5D] opacity-70 text-base"><?php echo esc_html($text); ?></p>
+                            <p class="text-[#424A5D] opacity-70 text-[20px]"><?php echo esc_html($text); ?></p>
                             <div class="flex flex-wrap md:flex-col gap-3">
                                 <?php if( $list ): ?>
                                     <?php foreach( $list as $item ): ?>
-                                        <div class="flex gap-4 items-center rounded-full py-[11px] px-6 shadow-md w-fit">
+                                        <div class="flex gap-4 items-center rounded-full py-[11px] px-6 w-fit bg-white" style="box-shadow: 0px 30px 40px 0px rgba(45, 54, 70, 0.06);">
                                             <img src="/wp-content/uploads/2024/10/Group-1944.svg" alt="icon">
-                                            <span class="text-[#2D3646] text-lg"><?php echo esc_html($item['item']); ?></span>
+                                            <p class="text-[#2D3646]"><?php echo esc_html($item['item']); ?></p>
                                         </div>
                                     <?php endforeach; ?>
                                 <?php endif; ?>
