@@ -1,0 +1,202 @@
+.accordion {
+    position: relative;
+    padding: 4rem 2rem;
+    box-sizing: border-box;
+    background-color: #f0f3f6;
+    overflow: hidden;
+
+    @media(min-width: $tabletP1) {
+        padding: 4vw 6.1vw;
+    }
+
+    @media(min-width: $deskLarge) {
+        padding: 3.3vw 30.4vw 1.7vw;
+    }
+
+    h2 {
+        @include adaptiveProperty('font-size', 36, 30);
+        line-height: 1.15;
+        text-align: center;
+    }
+
+    // .accordion__bg
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 120%;
+        left: -20%;
+        height: 100%;
+        opacity: 0.12;
+        display: none;
+
+
+        @media(min-width: $tabletP1) {
+            display: block;
+        }
+    }
+
+    // .accordion__bg-wrapper
+
+    &__bg-wrapper {
+        img {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    // .accordion__title
+
+    &__title {
+        position: relative;
+        z-index: 1;
+
+        p {
+            @include adaptiveProperty('font-size', 18, 16);
+            margin-top: 2.6rem;
+
+            @media(min-width: $deskLarge) {
+                margin-top: 1.4vw;
+            }
+        }
+    }
+
+    // .accordion__inner
+
+    &__inner {
+        position: relative;
+        z-index: 1;
+        margin-top: 3rem;
+
+        @media(min-width: $deskLarge) {
+            margin-top: 2.1vw;
+        }
+
+
+    }
+
+    // .accordion__item
+
+    &__item {
+        &:not(:first-of-type) {
+            margin-top: .4rem;
+
+            @media(min-width: $deskLarge) {
+                margin-top: .2vw;
+            }
+        }
+
+        &.active {
+            .accordion__icon {
+                span {
+                    &:before {
+                        transform: rotate(0)
+                    }
+                }
+            }
+        }
+    }
+
+    // .accordion__head
+
+    &__head {
+        @include adaptiveProperty('font-size', 16, 16);
+        padding: 1.4rem 2rem;
+        box-sizing: border-box;
+        background-color: $white;
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+
+        @media(min-width: $deskLarge) {
+            padding: 0.7vw 1vw;
+        }
+    }
+
+    // .accordion__icon
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 2rem;
+
+        @media(min-width: $deskLarge) {
+            margin-left: 1vw;
+        }
+
+        span {
+            width: 1.6rem;
+            height: 3px;
+            background-color: #ff4713;
+            display: block;
+            position: relative;
+
+            @media(min-width: $deskLarge) {
+                width: 0.8vw;
+                height: 0.15vw;
+            }
+
+            &:before {
+                content: '';
+                width: 1.6rem;
+                height: 3px;
+                background-color: #ff4713;
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: rotate(90deg);
+                transition: .2s ease-in-out;
+
+                @media(min-width: $deskLarge) {
+                    width: 0.8vw;
+                    height: 0.15vw;
+                }
+            }
+        }
+    }
+
+    // .accordion__body
+
+    &__body {
+        display: none;
+        @include adaptiveProperty('font-size', 16, 16);
+        padding: 1.4rem 2rem;
+        box-sizing: border-box;
+        background-color: $white;
+
+        @media(min-width: $deskLarge) {
+            padding: 0.8vw 1vw;
+        }
+    }
+
+    // .accordion__footer
+
+    &__footer {
+        display: flex;
+        justify-content: center;
+        margin-top: 3.6rem;
+
+        @media(min-width: $deskLarge) {
+            margin-top: 1.8vw;
+        }
+
+        .btn {
+            position: relative;
+            z-index: 1;
+            margin: 0 auto;
+            @include adaptiveProperty('font-size', 20, 16);
+            min-width: 240px;
+            height: 5.5rem;
+
+            @media(min-width: $deskLarge) {
+                height: 3vw;
+                min-width: 12vw;
+            }
+        }
+    }
+}

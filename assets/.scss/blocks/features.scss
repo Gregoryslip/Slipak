@@ -1,0 +1,295 @@
+.features {
+    background-color: #f7f9fa;
+    box-sizing: border-box;
+    padding: 4rem 0;
+
+    @media(min-width: $tabletP1) {
+        padding: 4vw 6.1vw;
+    }
+
+    @media(min-width: $deskLarge) {
+        padding: 2.8vw 21vw 3.4vw;
+    }
+
+    table {
+        width: 100%;
+
+        &:not(:first-of-type) {
+            margin-top: 2rem;
+
+            @media(min-width: $deskLarge) {
+                margin-top: 1.05vw;
+            }
+        }
+    }
+
+    td {
+        width: 100%;
+        @include adaptiveProperty('font-size', 16, 14);
+        padding: 1.2rem 0.8rem;
+        box-sizing: border-box;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+
+        @media(min-width: $tabletP1) {
+            padding: 1.2rem 1.8rem;
+            justify-content: center;
+        }
+
+        @media(min-width: $deskLarge) {
+            padding: .6vw .9vw;
+        }
+
+        svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            object-fit: contain;
+        }
+
+        h4 {
+            @include adaptiveProperty('font-size', 22, 14);
+            line-height: 1.15;
+            display: flex;
+
+            @media(max-width: $tabletP1) {
+                transform: rotate(-180deg);
+                writing-mode: vertical-rl;
+            }
+
+            strong {
+                padding: 0 0.2vw;
+            }
+        }
+    }
+
+    tr {
+        background-color: $white;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+
+        @media(max-width: $tabletSmallP1) {
+            grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
+        }
+
+        &:nth-of-type(odd) {
+            background-color: #e1e8ee;
+        }
+
+        &:first-of-type {
+            background-color: $transparent;
+            border-bottom: 1px solid #a5b1be;
+        }
+
+        td {
+            border-right: 1px solid $white;
+
+            &:first-of-type {
+                max-width: 36rem;
+                flex-direction: row;
+                justify-content: space-between;
+                border-right: 0;
+                align-items: center;
+
+                @media(min-width: $tabletSmallP1) {
+                    grid-column: span 2;
+                    width: 100%;
+                }
+
+                h4 {
+                    transform: none;
+                    writing-mode: unset;
+                    margin: auto 0 0 0;
+                }
+            }
+        }
+
+    }
+
+
+
+    // .features__title
+
+    &__title {
+        position: relative;
+        padding-bottom: 3rem;
+        border-bottom: 1px solid #ff4713;
+
+        @media(min-width: $deskLarge) {
+            padding-bottom: 1.6vw;
+        }
+
+        &:before {
+            content: '';
+            width: 3rem;
+            height: 3rem;
+            background-color: #f7f9fa;
+            transform: translate(0, 50%) rotate(45deg);
+            border-bottom: 1px solid #ff4713;
+            border-right: 1px solid #ff4713;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+        }
+
+        h2 {
+            text-align: center;
+        }
+    }
+
+    // .features__inner
+
+    &__inner {
+        margin-top: 4rem;
+
+        @media(min-width: $deskLarge) {
+            margin-top: 2.1vw;
+        }
+    }
+
+    // .features__tooltip
+
+    &__tooltip {
+        position: relative;
+        margin-left: 2rem;
+
+        &:hover {
+            .features__tooltip-body {
+                opacity: 1;
+                display: block;
+                transform: translateX(0);
+            }
+        }
+    }
+
+    // .features__tooltip-icon
+
+    &__tooltip-icon {
+        width: 1.4rem;
+        height: 1.4rem;
+        cursor: pointer;
+
+        svg {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+    }
+
+    // .features__tooltip-body
+
+    &__tooltip-body {
+        opacity: 0;
+        position: absolute;
+        top: 1vw;
+        left: 1vw;
+        background: $white;
+        padding: 1.2rem;
+        width: 16rem;
+        z-index: 1;
+        transition: .3s ease-in-out;
+        transform: translateX(20%);
+
+        @media(min-width: $deskLarge) {
+            width: 9vw;
+        }
+
+        @media(min-width: $deskLarge) {
+            padding: .8vw;
+        }
+    }
+
+    // .features__btns
+
+    &__btns {
+        border-top: 2px solid $white;
+    }
+
+    // .features__row
+
+    &__row {
+        background-color: #404a5f;
+        padding: 1.5rem;
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+
+        @media(min-width: $tabletSmallP1) {
+            padding-left: 24rem;
+        }
+
+        @media(min-width: $tabletP1) {
+            display: flex;
+            justify-content: flex-end;
+            padding-left: 0;
+        }
+
+        @media(min-width: $deskLarge) {
+            padding: .8vw;
+        }
+
+        .btn {
+            @include adaptiveProperty('font-size', 12, 12);
+            height: 3rem;
+            padding: .6rem 2rem .6rem;
+
+            @media(min-width: $deskLarge) {
+                height: 1.6vw;
+            }
+
+            &:not(:first-of-type) {
+                // margin-left: 3rem;
+
+                @media(min-width: $deskLarge) {
+                    margin-left: 1.4vw;
+                }
+            }
+        }
+    }
+
+    // .features__foot
+
+    &__foot {
+        background-color: $white;
+        border: 2px solid #a5b1be;
+        border-top: 0;
+        border-radius: 0 0 8px 8px;
+        overflow: hidden;
+        padding: 1.4rem 1.1rem;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: flex-end;
+
+        @media(min-width: $tabletP1) {
+            padding: .8rem 1.1rem 1.4rem;
+        }
+
+        @media(min-width: $deskLarge) {
+            padding: 0.5vw 0.6vw;
+        }
+
+        .btn {
+            @include adaptiveProperty('font-size', 12, 12);
+            height: 3rem;
+            padding: .6rem 2rem .6rem;
+
+            @media(min-width: $tabletP1) {
+                min-width: 15rem;
+            }
+
+            @media(min-width: $deskLarge) {
+                height: 1.6vw;
+            }
+
+            @media(min-width: $deskXLargeP1) {
+                min-width: 7.4vw;
+            }
+        }
+    }
+
+
+}

@@ -1,0 +1,158 @@
+.hero {
+    position: relative;
+    box-sizing: border-box;
+    padding: 0;
+    background-color: $bg;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    @media(min-width: $tabletP1) {
+        min-height: 38.15vw;
+        padding: 0 6.1vw;
+        flex-direction: row;
+        align-items: center;
+
+    }
+
+    @media(min-width: $deskLarge) {
+        padding: 0;
+    }
+
+    @media(min-width: $deskXLargeP1) {
+        min-height: unset;
+    }
+
+    &:after {
+        @media(min-width: $tabletP1) {
+            content: '';
+            width: 50vw;
+            height: 23vw;
+            background-color: #ff4713;
+            border-radius: 0 60% 0 0;
+            position: absolute;
+            bottom: -15vw;
+            left: -37vw;
+            z-index: 2;
+        }
+        @media(min-width: $deskLarge) {
+            bottom: -13vw;
+            left: -29vw;
+        }
+    }
+
+    p {
+        @extend .p2;
+        margin-top: 2rem;
+
+        @media(min-width: $tabletP1) {
+            margin-top: 3.6rem;
+        }
+
+        @media(min-width: $deskLarge) {
+            margin-top: 1.9vw;
+        }
+    }
+
+    .btn {
+        margin-top: 2rem;
+
+        @media(min-width: $tabletP1) {
+            margin-top: 3.6rem;
+        }
+
+        @media(min-width: $deskLarge) {
+            margin-top: 1.85vw;
+        }
+    }
+
+    // .hero__inner
+
+    &__inner {
+        @media(min-width: $tabletP1) {
+            width: 45%;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        @media(min-width: $tabletP1) {
+            padding: 6.6vw 8vw 6.6vw 0;
+            width: 53%;
+        }
+
+        @media(min-width: $deskLarge) {
+            width: 35.5%;
+            padding: 6.6vw 0 6.6vw 21vw;
+        }
+
+        @media(min-width: $deskXLargeP1) {
+            min-height: 38.15vw;
+            display: flex;
+            align-items: center;
+            width: 36vw;
+        }
+
+        &:before {
+            @media(min-width: $tabletP1) {
+                content: '';
+                width: 140%;
+                height: 160%;
+                background-image: url(./assets/image/hero/hero-bg.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: right;
+                position: absolute;
+                right: 0;
+                top: 0;
+                z-index: -1;
+            }
+        }
+    }
+
+    // .hero__text
+
+    &__text {
+        padding: 4rem 2rem;
+
+        @media(min-width: $tabletP1) {
+            padding: 0;
+        }
+
+        @media(min-width: $deskLarge) {
+            width: 84%;
+        }
+    }
+
+    // .hero__bg
+
+    &__bg {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 50%;
+
+        @media(min-width: $tabletP1) {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 50%;
+            padding-bottom: 0;
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            @media(min-width: $tabletP1) {
+                position: static;
+            }
+        }
+    }
+}

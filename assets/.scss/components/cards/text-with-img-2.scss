@@ -1,0 +1,122 @@
+.text-with-img-2 {
+    background-color: #f7f9fa;
+    padding: 0 2rem 2rem;
+    box-sizing: border-box;
+
+    @media(min-width: $tabletP1) {
+        padding: 0 7.5rem 2rem;
+    }
+
+    @media(min-width: $deskLarge) {
+        padding: 1.6vw 3.8vw;
+    }
+
+    h2 {
+        @include adaptiveProperty('font-size', 26, 20);
+        line-height: 1.25;
+        font-weight: 400;
+
+    }
+
+
+    // .text-with-img-2__item
+
+    &__item {
+        box-sizing: border-box;
+        border-bottom: 1px solid #ff4713;
+        position: relative;
+        padding: 2rem 0;
+
+        @media(min-width: $tabletSmallP1) {
+            display: flex;
+            justify-content: space-between;
+            padding: 3.4rem 1.6rem 3.4rem 0;
+        }
+
+        @media(min-width: $deskLarge) {
+            padding: 2.2vw 2.6vw 2.2vw 0;
+        }
+
+        &:before {
+            content: '';
+            width: 2rem;
+            height: 2rem;
+            background-color: #f7f9fa;
+            transform: translate(-50%, 55%) rotate(45deg);
+            border-bottom: 1px solid #ff4713;
+            border-right: 1px solid #ff4713;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+        }
+    }
+
+    // .text-with-img-2__text
+
+    &__text {
+        @media(min-width: $tabletSmallP1) {
+            width: 52%;
+        }
+
+        ul {
+            @extend .list;
+            margin-top: 2rem;
+
+            @media(min-width: $deskLarge) {
+                margin-top: 1vw;
+            }
+
+            li {
+                @include adaptiveProperty('font-size', 16, 14);
+
+                &:before {
+                    @media(min-width: $deskLarge) {
+                        top: 0.6vw;
+                    }
+                }
+            }
+        }
+
+        a {
+            @extend .link;
+            margin-top: 2rem;
+
+            @media(min-width: $deskLarge) {
+                margin-top: 1.05vw;
+            }
+        }
+    }
+
+    // .text-with-img-2__img
+
+    &__img {
+        margin-top: 1.4rem;
+
+        @media(min-width: $tabletSmallP1) {
+            width: 44%;
+            margin-top: 0;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cocer;
+        }
+    }
+
+    .text-with-img-2__item--reverce {
+        padding: 2rem 0;
+
+        @media(min-width: $tabletSmallP1) {
+            padding: 3.4rem 0 3.4rem 1.6rem;
+        }
+
+        @media(min-width: $tabletSmallP1) {
+            flex-direction: row-reverse;
+        }
+
+        @media(min-width: $deskLarge) {
+            padding: 2.2vw 0 2.2vw 2.6vw;
+        }
+    }
+}

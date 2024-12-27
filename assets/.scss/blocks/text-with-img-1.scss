@@ -1,0 +1,229 @@
+.text-with-img-1 {
+    padding: 4rem 2rem;
+    position: relative;
+    box-sizing: border-box;
+    background-color: #f7f9fa;
+
+    @media(min-width: $tabletP1) {
+        padding: 4vw 6.1vw;
+    }
+
+    @media(min-width: $deskLarge) {
+        padding: 3vw 21vw 2.6vw;
+    }
+
+    h2 {
+        @extend .h4;
+        font-weight: 400;
+    }
+
+    p {
+        @include adaptiveProperty('font-size', 16, 16);
+        line-height: 1.375;
+        margin-top: 1.6rem;
+
+        @media(min-width: $deskLarge) {
+            margin-top: 0.8vw;
+        }
+
+        &:not(:first-of-type) {
+            margin-top: 1.2rem;
+
+            @media(min-width: $deskLarge) {
+                margin-top: 0.6vw;
+            }
+        }
+
+    }
+
+    a {
+        @extend .link;
+        margin-top: 1.6rem;
+
+        @media(min-width: $deskLarge) {
+            margin-top: 1vw;
+        }
+    }
+
+    // .text-with-img-1__overlay
+
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    // .text-with-img-1__outer
+
+    &__outer {}
+
+    // .text-with-img-1__inner
+
+    &__inner {}
+
+    // .text-with-img-1__item
+
+    &__item {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        background-color: $white;
+
+        @media(min-width: $tabletP1) {
+            flex-direction: row;
+        }
+
+        &:not(:first-of-type) {
+            margin-top: 2rem;
+
+            @media(min-width: $deskLarge) {
+                margin-top: 1.6vw;
+            }
+        }
+
+
+    }
+
+    // .text-with-img-1__bg
+
+    &__bg {
+        display: none;
+
+        @media(min-width: $mobileP1) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 68%;
+            height: 100%;
+            z-index: 1;
+            display: block;
+        }
+
+        @media(min-width: $tabletP1) {
+            width: 62%;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 100%;
+        }
+    }
+
+    // .text-with-img-1__text
+
+    &__text {
+        position: relative;
+        z-index: 2;
+        padding: 2rem;
+        box-sizing: border-box;
+
+        @media(min-width: $mobileP1) {
+            width: 53%;
+        }
+
+        @media(min-width: $tabletP1) {
+            padding: 2.6vw 0 2.6vw 4vw;
+        }
+    }
+
+    // .text-with-img-1__img
+
+    &__img {
+        width: 100%;
+
+        @media(min-width: $mobileP1) {
+            width: 50%;
+            position: absolute;
+            right: 0;
+            height: 100%;
+        }
+
+        @media(min-width: $tabletP1) {
+            width: 46%;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    // .text-with-img-1__item--reverce
+
+    &__item--reverce {
+        .text-with-img-1__item {
+            @media(min-width: $tabletP1) {
+                flex-direction: row-reverse;
+            }
+        }
+
+        .text-with-img-1__img {
+            right: unset;
+            left: 0;
+            margin-top: -1px;
+        }
+
+        .text-with-img-1__bg {
+            @media(min-width: $mobileP1) {
+                width: 68%;
+                margin-top: -2px;
+                height: calc(100% + 2px);
+            }
+        }
+
+        .text-with-img-1__text {
+            margin: 0 0 0 auto;
+
+            @media(min-width: $mobileP1) {
+                width: 59%;
+            }
+
+            @media(min-width: $tabletP1) {
+                padding: 2.6vw 4vw 2.6vw 0;
+            }
+        }
+
+        .text-with-img-1__bg {
+            left: unset;
+            right: 0;
+            transform: rotate(180deg);
+        }
+    }
+
+    // .text-with-img-1--opacity-bg
+
+    &--opacity-bg {
+        .text-with-img-1__overlay {
+            opacity: .8;
+        }
+    }
+
+    // .text-with-img-1--larger-images
+
+    &--larger-images {
+        .text-with-img-1__img {
+            @media(min-width: $tabletP1) {
+                width: 43%;
+            }
+        }
+
+        .text-with-img-1__bg {
+            @media(min-width: $mobileP1) {
+                width: 64%;
+            }
+        }
+    }
+}

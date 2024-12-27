@@ -1,0 +1,68 @@
+@mixin adaptiveProperty($propertyName, $deskSize, $mobSize) {
+    $addSize: $deskSize - $mobSize;
+    $addMobSize: $addSize + $addSize * 0.7;
+    @media (max-width: numToPx($adaptivePropertyMinViewport)) {
+        #{$propertyName}: numToRem($mobSize);
+    }
+    @media (min-width: numToPx($adaptivePropertyMinViewport + 1)) and (max-width: numToPx($containerMaxWidth)) {
+        #{$propertyName}: calc(#{numToRem($mobSize)} + #{$addSize} * ((100vw - #{numToPx($adaptivePropertyMinViewport)}) / (#{$adaptivePropertyMaxViewport} - #{$adaptivePropertyMinViewport})));
+    }
+    @media (min-width: numToPx($adaptivePropertyMaxViewport + 1)) {
+        #{$propertyName}: calc( #{$deskSize} * ((100vw - #{$containerPaddingXL} * 2 - #{numToPx($adaptivePropertyMinViewport)}) / (#{$adaptivePropertyMaxViewport} - #{$adaptivePropertyMinViewport})));
+    }
+}
+
+@mixin abs-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+@mixin fullWidthBeforeTablet {
+    @media (max-width: $tabletLargeP1) {
+        position: relative;
+        left: -$containerPaddingS;
+        width: 100vw;
+    }
+    @media (min-width: $mobileP1) and (max-width: $tabletLarge) {
+        left: -$containerPaddingM;
+    }
+}
+
+@mixin containerPaddingsBeforeTablet {
+    box-sizing: border-box;
+    @media (max-width: $mobile) {
+        padding-right: $containerPaddingS;
+        padding-left: $containerPaddingS;
+    }
+    @media (min-width: $mobileP1) and (max-width: $tabletLarge) {
+        padding-right: $containerPaddingM;
+        padding-left: $containerPaddingM;
+    }
+}
+
+@mixin marginTop($desktopValue, $mobileValue) {
+    margin-top: numToRem($mobileValue);
+    @media (min-width: $tabletSmallP1) {
+        margin-top: numToRem($desktopValue)
+    }
+}
+
+@mixin marginBottom($desktopValue, $mobileValue, $hideLastMargin: false) {
+    margin-bottom: numToRem($mobileValue);
+    @media (min-width: $tabletSmallP1) {
+        margin-bottom: numToRem($desktopValue)
+    }
+    @if ($hideLastMargin) {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

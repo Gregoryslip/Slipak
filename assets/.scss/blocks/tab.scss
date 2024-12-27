@@ -1,0 +1,136 @@
+.tab {
+    position: relative;
+    box-sizing: border-box;
+    padding: 4rem 2rem;
+
+    @media(min-width: $tabletP1) {
+        padding: 4vw 6.1vw;
+    }
+
+    @media(min-width: $deskLarge) {
+        padding: 4.4vw 21vw 2.3vw;
+    }
+
+    // .tab__bg
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    // .tab__title
+
+    &__title {
+        position: relative;
+
+        h2 {
+            text-align: center;
+        }
+    }
+
+    // .tab__outer
+
+    &__outer {
+        position: relative;
+        margin-top: 2rem;
+
+        @media(min-width: $tabletP1) {
+            margin-top: 4rem;
+        }
+
+        @media(min-width: $deskLarge) {
+            margin-top: 3.1vw;
+        }
+    }
+
+    // .tab__triggers
+
+    &__triggers {
+        display: flex;
+    }
+
+    // .tab__trigger
+
+    &__trigger {
+        width: 33.3%;
+        background-color: #f0f3f6;
+        @include adaptiveProperty('font-size', 18, 14);
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        padding: 1.6rem 1.9rem;
+        box-sizing: border-box;
+        cursor: pointer;
+
+        @media(min-width: $deskLarge) {
+            padding: 0.8vw 1vw;
+        }
+
+        &:not(:last-of-type){
+            &:before{
+                content: '';
+                height: 50%;
+                width: 1px;
+                background-color: #ff4713;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 0;
+            }
+        }
+    }
+
+    .tab__trigger.tab.active {
+        background-color: #ff4713;
+        color: #fee6e0;
+        // width: 33.6%;
+        
+        &:after{
+            content: '';
+            height: 100%;
+            width: 1px;
+            background-color: #ff4713;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        &:before {
+            content: '';
+            width: 2.4rem;
+            height: 2.4rem;
+            background-color: #ff4713;
+
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 50%) rotate(45deg);
+            z-index: 3;
+        }
+    }
+
+    // .tab__inner
+
+    &__inner {}
+
+    // .tab__tab
+
+    &__tab {
+        display: none;
+    }
+
+    .active[data-tab-content] {
+        display: block;
+    }
+}

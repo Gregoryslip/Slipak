@@ -1,0 +1,845 @@
+.row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.row.nowrap{
+    flex-wrap: nowrap;
+}
+.row.col{
+    flex-direction: column;
+}
+.row.center{
+    justify-content: center;
+}
+.row.between{
+    justify-content: space-between;
+}
+.row.top{
+    align-items: flex-start;
+}
+.row.middle{
+    align-items: center;
+}
+.row.bottom{
+    align-items: end;
+}
+
+/* Header ---------------------------------------*/
+
+header#header{
+    padding: 8px 12vw;
+}
+header#header .header__logo-group{
+    margin-right: auto;
+}
+header#header .header__account{
+    justify-content: end;
+    margin-left: auto;
+    min-width: unset;
+    border-radius: 10vw;
+    padding: 0 0.6vw;
+}
+header#header .header__person{
+    max-width: unset;
+    height: auto;
+    margin-right: 0.5rem;
+}
+header#header .header__account svg{
+    width: 12px;
+    margin-top: 3px;
+}
+header#header .header__cta{
+    margin-left: 8px;
+    border-radius: 10vw;
+}
+header#header .header__menu{
+    padding: 0;
+    margin-top: 1px;
+}
+
+header#header .header__mobile-trigger{
+    position: absolute;
+    top: 17px;
+    right: 6.1vw;
+    z-index: 1;
+}
+
+/* Pricing ----------------------------------------------- */
+
+section#pricing *,
+section#pricing *:before,
+section#pricing *:after{
+    box-sizing: border-box;
+}
+section#pricing .content{
+    text-align: center;
+    margin-bottom: 80px;
+}
+section#pricing .content h1{
+    font-size: 64px;
+    margin-bottom: 25px;
+}
+section#pricing .content p{
+    font-size: 22px;
+}
+section#pricing .boxes{
+    max-width: 1330px;
+}
+section#pricing .box{
+    width: calc(50% - 20px);
+    border: solid 1px #e4e9ee;
+    box-shadow: 0px 20px 30px rgba(45, 54, 70, 0.06);
+    border-radius: 8px;
+    padding: 25px 40px;
+    background: #fff;
+}
+section#pricing label{
+    padding: 0 15px;
+    line-height: 35px;
+    border-radius: 4px;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 16px;
+    font-weight: 600;
+}
+section#pricing .free label{
+    color: #244f6a;
+    background: #dff2fa;
+}
+section#pricing .premium label{
+    color: #ff4713;
+    background: #ffece7;
+}
+section#pricing .switch{
+    position: relative;
+    margin-right: 115px;
+}
+section#pricing .switch span{
+    display: inline-block;
+    vertical-align: top;
+    line-height: 22px;
+    font-size: 14px;
+    margin: 0 5px;
+    font-weight: 600;
+}
+section#pricing .switch input{
+    position: relative;
+    width: 33px;
+    height: 22px;
+    margin: 0;
+    cursor: pointer;
+    appearance: none;
+}
+section#pricing .switch input:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: solid 2px #6fc186;
+    background: #6fc186;
+    border-radius: 11px;
+    transition: all 0.1s ease-out;
+}
+section#pricing .switch input:hover:before{
+    border-color: #55b16f;
+    background: #55b16f;
+}
+section#pricing .switch input:after{
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0 4px rgba(0,0,0,0.3);
+    transition: all 0.1s ease-out;
+}
+section#pricing .switch input:checked:after{
+    left: 12px;
+}
+section#pricing .switch label{
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    margin-left: 5px;
+    border-radius: 20px;
+    transform: translateY(-50%);
+    white-space: nowrap;
+}
+section#pricing .select select{
+    line-height: 35px;
+    padding: 0 35px 0 15px;
+    border: solid 2px #e2e8ed;
+    font-size: 16px;
+    color: #404a5f;
+    transition: all 0.1s ease-out;
+}
+section#pricing .select select:hover,
+section#pricing .select select:active{
+    border-color: #acb7cd;
+}
+section#pricing .select:before{
+    background: none;
+    position: absolute;
+    top: 12px;
+    right: 19px;
+    width: 8px;
+    height: 8px;
+    border-bottom: solid 1px #404a5f;
+    border-right: solid 1px #404a5f;
+    transform: rotate(45deg);
+}
+section#pricing .select select option{
+    line-height: 30px;
+    height: 30px;
+}
+section#pricing .price-row{
+    margin: 25px 0;
+}
+section#pricing .price{
+    font-size: 50px;
+    font-weight: bold;
+    margin-right: 15px;
+}
+section#pricing[currency='gbp'] .price:before{
+    content: "£";
+}
+section#pricing[currency='usd'] .price:before,
+section#pricing[currency='cad'] .price:before,
+section#pricing[currency='aud'] .price:before{
+    content: "$";
+}
+section#pricing[currency='eur'] .price:before{
+    content: "€";
+}
+section#pricing[currency='cad'] .price:before{
+    content: "$";
+}
+section#pricing .price-description{
+    font-size: 20px;
+    padding: 5px 0;
+}
+section#pricing[currency='gbp'] .billed-value:before{
+    content: "£";
+}
+section#pricing[currency='usd'] .billed-value:before,
+section#pricing[currency='cad'] .billed-value:before,
+section#pricing[currency='aud'] .billed-value:before{
+    content: "$";
+}
+section#pricing[currency='eur'] .billed-value:before{
+    content: "€";
+}
+section#pricing .description ul{
+    list-style: none;
+    margin: 0;
+}
+section#pricing .description ul li{
+    position: relative;
+    padding-left: 30px;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+section#pricing .description ul li:not(:last-child){
+    margin-bottom: 15px;
+}
+section#pricing .description ul li:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -1px;
+    width: 22px;
+    height: 22px;
+    background: #eef7ff;
+    border-radius: 50%;
+}
+section#pricing .description ul li:after{
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 10px;
+    height: 6px;
+    border-left: solid 2px #63bae3;
+    border-bottom: solid 2px #63bae3;
+    transform: rotate(-45deg);
+}
+section#pricing .details{
+    flex: 1;
+}
+section#pricing .details a{
+    position: relative;
+    line-height: 35px;
+    border-radius: 15px;
+    color: #404a5f;
+    background: #f7f9fa;
+    padding: 0 35px 0 20px;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: all 0.1s ease-out;
+}
+section#pricing .details a:active,
+section#pricing .details a:visited,
+section#pricing .details a:focus{
+    color: #404a5f;
+}
+section#pricing .details a:hover{
+    color: #000;
+    background: #e2e8ed;
+}
+section#pricing .details a:before{
+    content: "";
+    position: absolute;
+    top: 11px;
+    right: 22px;
+    width: 2px;
+    height: 11px;
+    background: #404a5f;
+}
+section#pricing .details a:after{
+    content: "";
+    position: absolute;
+    top: 14px;
+    right: 19px;
+    width: 8px;
+    height: 8px;
+    border-left: solid 1px #000000;
+    border-bottom: solid 1px #000000;
+    transform: rotate(-45deg);
+}
+section#pricing .details p{
+    margin-bottom: -6px;
+    font-style: italic;
+    font-size: 16px;
+}
+section#pricing .details br{
+    display: none;
+}
+section#pricing .details label{
+    line-height: 30px;
+    padding: 0 12px;
+    border-radius: 15px;
+    margin: -4px 0 0 5px;
+	font-style: normal;
+}
+section#pricing[currency='gbp'] .details label:before{
+    content: "+£";
+}
+section#pricing[currency='usd'] .details label:before,
+section#pricing[currency='cad'] .details label:before,
+section#pricing[currency='aud'] .details label:before{
+    content: "+$";
+}
+section#pricing[currency='eur'] .details label:before{
+    content: "+€";
+}
+
+section#pricing .note{
+    margin: 30px 0;
+    text-align: center;
+    font-size: 16px;
+}
+section#pricing .btn+.note{
+    margin: 10px 0;
+}
+section#pricing .plans{
+    position: relative;
+    font-size: 0;
+    height: 10px;
+    margin: 35px 13px 15px 12px;
+    background: #e2e8ed;
+    border-radius: 10px;
+    cursor: pointer;
+}
+section#pricing .plans > span{
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+    width: 7.14%;
+    /*border-right: solid 2px #fff;*/
+    z-index: 1;
+}
+section#pricing .plans .bar{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: linear-gradient(to right, #ff7b59, #ff4713);
+    border-radius: 10px;
+}
+section#pricing .plans .ui-slider{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: transparent;
+}
+section#pricing .plans .ui-slider:after{
+    content: "";
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: 25px;
+    height: 100%;
+}
+section#pricing .plans .ui-slider-handle{
+    position: absolute;
+    left: 0;
+    top: -8px;
+    width: 25px;
+    height: 25px;
+    background: #fff;
+    border: solid 4px #ff4713;
+    border-radius: 50%;
+    box-shadow: 0 3px 10px rgb(0,0,0,0.12);
+    transform: translateX(-12px);
+    outline: none;
+}
+section#pricing .plans .ui-slider-handle:before{
+    content: "";
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    width: 19px;
+    height: 19px;
+    transition: all 0.1s ease-out;
+    border-radius: 50%;
+}
+section#pricing .plans .ui-slider-handle:hover:before,
+section#pricing .plans .ui-slider-handle:active:before{
+    background: #ff4713;
+}
+section#pricing .box > .plans-value{
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+section#pricing .button{
+    margin-top: auto;
+}
+section#pricing .btn{
+    transition: all 0.1s ease-out;
+}
+section#pricing .btn-empty{
+    color: #404a5f;
+    background: #fff;
+}
+section#pricing .btn-empty:hover{
+    color: #fff;
+    background: #ff4713;
+}
+section#pricing .btn svg{
+    width: 18px;
+    margin-right: 6px;
+    transition: all 0.1s ease-out;
+}
+section#pricing .btn:hover svg{
+    fill: #68758f;
+}
+
+section#pricing form#pricing-triggers{
+    display: none;
+}
+
+/* FAQ ----------------------------------------------- */
+
+section#faq-alternate *,
+section#faq-alternate *:before,
+section#faq-alternate *:after{
+    box-sizing: border-box;
+}
+section#faq-alternate{
+    box-sizing: border-box;
+    padding: 4rem 2rem;
+}
+section#faq-alternate .content{
+    text-align: center;
+    margin-bottom: 80px;
+}
+section#faq-alternate .content h1 {
+    font-size: 64px;
+    margin-bottom: 25px;
+}
+section#faq-alternate .content p{
+    font-size: 22px;
+}
+section#faq-alternate .heading{
+    margin-bottom: 30px;
+}
+section#faq-alternate .heading img{
+    margin: 2px 20px 0 0;
+	max-width: 68px;
+}
+section#faq-alternate .heading .text{
+    margin-right: 20px;
+}
+section#faq-alternate .heading h2{
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+section#faq-alternate .heading .expand-all{
+    position: relative;
+    padding: 12px 42px 12px 22px;
+    background: #f7f9fa;
+    border-radius: 25px;
+    margin-left: auto;
+    font-size: 16px;
+    transition: all 0.1s ease-out;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+}
+section#faq-alternate .heading .expand-all:hover{
+    background: #e2e8ed;
+}
+section#faq-alternate .heading .expand-all:after{
+    content: "";
+    position: absolute;
+    top: calc(50% - 2px);
+    right: 20px;
+    width: 7px;
+    height: 7px;
+    border-bottom: solid 2px #000;
+    border-right: solid 2px #000;
+    transform: translateY(-50%) rotate(45deg);
+    transition: all 0.1s ease-out;
+}
+section#faq-alternate .heading .expand-all.open:after{
+    top: calc(50% + 2px);
+    transform: translateY(-50%) rotate(-135deg);
+}
+section#faq-alternate .heading .expand-all #collapse,
+section#faq-alternate .heading .expand-all.open #expand{
+    position: absolute;
+    opacity: 0;
+    transition: none;
+}
+section#faq-alternate .heading .expand-all.open #collapse,
+section#faq-alternate .heading .expand-all #expand{
+    position: relative;
+    opacity: 1;
+    transition: opacity 0.25s ease-out 0.1s;
+}
+section#faq-alternate .faq{
+    padding: 0 40px;
+    border-radius: 15px;
+    border: solid 1px #eaeaea;
+}
+section#faq-alternate .faq .question{
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 20px 40px 20px 0;
+    border-bottom: solid 1px #eaeaea;
+    cursor: pointer;
+    transition: color 0.1s ease-out, border 0.25s ease-out;
+}
+section#faq-alternate .faq .item:last-child:not(.open) .question{
+    border-color: transparent;
+}
+section#faq-alternate .faq .question:hover{
+    color: #ff4713;
+}
+section#faq-alternate .faq .question:after{
+    content: "";
+    position: absolute;
+    top: calc(50% - 2px);
+    right: 0;
+    width: 10px;
+    height: 10px;
+    border-bottom: solid 1px #000;
+    border-right: solid 1px #000;
+    transform: translateY(-50%) rotate(45deg);
+    transition: all 0.1s ease-out;
+}
+section#faq-alternate .faq .open .question:after{
+    top: calc(50% + 1px);
+    transform: translateY(-50%) rotate(-135deg);
+}
+section#faq-alternate .faq .answer{
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    transition: height 0.25s ease-out;
+}
+section#faq-alternate .faq .open .answer{
+    position: relative;
+    visibility: visible;
+    opacity: 1;
+    transition: height 0.25s ease-out, opacity 0.25s ease-out 0.25s;
+}
+section#faq-alternate .faq .answer span{
+    display: block;
+    padding: 25px 100px 25px 0;
+}
+section#faq-alternate .faq .answer p{
+    line-height: 1.5;
+}
+
+section#faq-alternate .button{
+    margin: 45px 0;
+}
+section#faq-alternate .btn.arrow{
+    padding-right: 6rem;
+}
+
+section#faq-alternate .btn.arrow:before,
+section#faq-alternate .btn.arrow:after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    transition: 0.3s ease-in-out;
+}
+section#faq-alternate .btn.arrow:before{
+    background: #fff;
+    width: 12px;
+    height: 2px;
+    right: 38px;
+    transform: translateY(-50%);
+}
+section#faq-alternate .btn.arrow:hover:before{
+    background: #ff4713;
+}
+section#faq-alternate .btn.arrow:after{
+    width: 10px;
+    height: 10px;
+    right: 37px;
+    border-bottom: solid 2px #fff;
+    border-right: solid 2px #fff;
+    transform: translateY(-50%) rotate(-45deg);
+}
+section#faq-alternate .btn.arrow:hover:after{
+    border-color: #ff4713;
+}
+
+section#faq-alternate ul {
+    list-style: none;
+}
+
+section#faq-alternate ul li::before {
+    content: '•';
+    left: 1.25rem;
+    position: absolute;
+}
+
+/* Responsive -------------------------------------------- */
+
+@media (min-width: 1025px){
+    header#header,
+    section#faq-alternate{
+        padding: 0.47vw 6.1vw;
+    }
+}
+@media (min-width: 1599px){
+    header#header{
+        padding: 0.47vw 12vw;
+    }
+    section#pricing,
+    section#faq-alternate{
+        max-width: unset;
+        padding: 3vw 12vw 1.7vw;
+    }
+}
+@media (min-width: 1921px){
+    header#header .header__person{
+        display: block;
+    }
+    header#header .header__account svg {
+        width: 0.67vw;
+        margin-right: 0.1vw;
+    }
+    header#header .header__cta{
+        margin-left: 0.5vw;
+    }
+}
+
+
+/* ------------------------------------------------------- */
+
+@media (max-width: 1320px){
+    section#pricing .boxes{
+        flex-direction: column;
+        align-items: center;
+    }
+    section#pricing .box.free{
+        margin-bottom: 30px;
+    }
+    section#pricing .box{
+        width: 625px;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 1280px){
+    header#header {
+        padding: 8px 6.1vw;
+        justify-content: normal;
+    }
+    header#header .header__menu{
+        padding: 0;
+        order: 1;
+        margin-left: 18px;
+    }
+    header#header .header__account{
+        margin-left: auto;
+        min-width: unset;
+        padding: 0 8px;
+    }
+    header#header .header__mobile-menu{
+        padding: 0 6.1vw;
+    }
+    header#header .header__mobile-menu ul{
+        padding-top: 17px;
+    }
+}
+
+@media (max-width: 1024px){
+    section#pricing .content,
+    section#faq-alternate .content {
+        margin-bottom: 60px;
+    }
+    section#faq-alternate .faq .answer span{
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 800px){
+    section#pricing .content,
+    section#faq-alternate .content{
+        margin-bottom: 40px;
+    }
+    section#faq-alternate .heading{
+        flex-wrap: wrap;
+    }
+    section#faq-alternate .heading .text{
+        margin: 0;
+    }
+    section#faq-alternate .heading .expand-all{
+        margin: 25px 14px 0;
+        width: 100%;
+        margin-top: 25px;
+        padding: 12px 22px 12px 22px;
+    }
+    section#faq-alternate .heading .expand-all:after{
+        right: 27px;
+    }
+}
+
+@media (max-width: 768px){
+    header#header{
+        flex-direction: row;
+    }
+    header#header .header__account,
+    header#header .header__cta{
+        width: auto;
+        margin-top: 0;
+    }
+    header#header .header__menu{
+        width: auto;
+        margin-top: 1px;
+    }
+}
+
+@media (max-width: 630px){
+    section#pricing .box .controls{
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 30px;
+    }
+    section#pricing .description{
+        flex-direction: column;
+    }
+    section#pricing .details{
+        align-items: start;
+        margin-top: 20px;
+    }
+    section#pricing .details p{
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 600px){
+    section#faq-alternate .faq .question{
+        font-size: 18px;
+    }
+    section#faq-alternate .faq{
+        padding: 0 25px;
+    }
+    section#faq-alternate .heading .row{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    section#faq-alternate .heading img{
+        margin: 0 0 15px;
+    }
+    section#faq-alternate .heading .text{
+        text-align: center;
+        width: 100%;
+    }
+    section#faq-alternate .heading .expand-all{
+        margin: 25px 0px 0;
+    }
+}
+
+@media (max-width: 500px){
+    html{
+        margin-top: 103px !important;
+    }
+    header#header .header__cta{
+        width: 100%;
+        margin: 10px 0 5px;
+        order: 2;
+    }
+    header#header .header__menu{
+        margin-left: 10px;
+    }
+    section#pricing .box{
+        padding: 25px;
+    }
+    section#pricing .box > .plans-value{
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 460px){
+    section#pricing .select{
+        width: 100%;
+        margin-top: 15px;
+    }
+    section#faq-alternate .faq .question{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 400px){
+    section#pricing .details br{
+        display: block;
+    }
+    section#pricing .details label{
+        margin: 4px 0 0 0px;
+    }
+    section#faq-alternate .faq{
+        padding: 0 20px;
+    }
+    section#faq-alternate .heading .expand-all{
+        padding: 12px 17px 12px 17px;
+    }
+    section#faq-alternate .heading .expand-all:after{
+        right: 22px;
+    }
+}
+
+@media (max-width: 375px){
+    section#faq-alternate .faq .answer p{
+        font-size: 1.6rem;
+    }
+}

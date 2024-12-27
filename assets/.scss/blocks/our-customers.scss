@@ -1,0 +1,249 @@
+.our-customers {
+    position: relative;
+    background-color: #f7f9fa;
+    padding: 4rem 2rem;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    @media(min-width: $tabletP1) {
+        padding: 4vw 6.1vw;
+    }
+
+    @media(min-width: $deskLarge) {
+        padding: 2.4vw 21vw 1.4vw;
+    }
+
+    &:before {
+        content: '';
+        width: 40vw;
+        height: 40vw;
+        border-radius: 50%;
+        background-color: #ff4713;
+        position: absolute;
+        left: -27vw;
+        bottom: -32vw;
+    }
+
+    &:after {
+        content: '';
+        width: 40vw;
+        height: 40vw;
+        border-radius: 50%;
+        background-color: #e1e8ee;
+        position: absolute;
+        right: -25vw;
+        top: -33vw;
+    }
+
+    // .our-customers__outer
+
+    &__outer {}
+
+    // .our-customers__title
+
+    &__title {
+        h2 {
+            @include adaptiveProperty('font-size', 42, 36);
+            text-align: center;
+        }
+    }
+
+    // .our-customers__inner
+
+    &__inner {
+        margin-top: 3.4rem;
+        position: relative;
+
+        @media(min-width: $deskLarge) {
+            margin-top: 1.8vw;
+        }
+    }
+
+    // .our-customers__left
+
+    &__left {
+        display: none;
+
+        @media(min-width: $tabletP1) {
+            left: -6rem;
+            transform: rotate(180deg);
+            display: block;
+        }
+
+        @media(min-width: $deskLarge) {
+            left: -5vw;
+        }
+    }
+
+    // .our-customers__wrapper
+
+    &__wrapper {}
+
+    // .our-customers__item
+
+    &__item {
+        h3 {
+            @include adaptiveProperty('font-size', 32, 26);
+            color: #ff4713;
+        }
+
+        p {
+            @include adaptiveProperty('font-size', 20, 18);
+            margin-top: .8rem;
+
+            @media(min-width: $deskLarge) {
+                margin-top: .35vw;
+            }
+        }
+    }
+
+    // .our-customers__right
+
+    &__right {
+        display: none;
+
+        @media(min-width: $tabletP1) {
+            right: -6rem;
+            display: block;
+        }
+
+        @media(min-width: $deskLarge) {
+            right: -5vw;
+        }
+    }
+
+    // .our-customers__footer
+
+    &__footer {}
+
+    // .our-customers__dots
+
+    &__dots {
+        margin-top: 4.6rem;
+
+        @media(min-width: $deskLarge) {
+            margin-top: 2.4vw;
+        }
+    }
+
+    .our-customers__arrow {
+        display: none !important;
+
+        @media(min-width: $tabletP1) {
+            width: 5rem;
+            position: absolute;
+            top: 30%;
+            display: block !important;
+        }
+
+        @media(min-width: $deskLarge) {
+            width: 2.6vw;
+        }
+
+
+        svg {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    .slick-dots {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+
+        li {
+            &:not(:first-of-type) {
+                margin-left: 2rem;
+
+                @media(min-width: $deskLarge) {
+                    margin-left: 1.05vw;
+                }
+            }
+        }
+
+        button {
+            width: 1.3rem;
+            height: 1.3rem;
+            font-size: 0;
+            background-color: #a5b1be;
+            border-radius: 50%;
+            transition: .2s ease-in-out;
+
+            @media(min-width: $deskLarge) {
+                width: 0.7vw;
+                height: 0.7vw
+            }
+        }
+
+        .slick-active {
+            button {
+                background-color: #ff4713;
+            }
+        }
+    }
+
+    .slick-current {}
+
+    .slick-slide {
+        &:nth-of-type(odd) {
+            @media(min-width: $tabletSmallP1) {
+                padding-right: 4rem;
+            }
+
+            @media(min-width: $tablet) {
+                padding-right: 8rem;
+            }
+
+            @media(min-width: $deskLarge) {
+                padding-right: 5vw;
+            }
+
+        }
+
+        &:nth-of-type(even) {
+            @media(min-width: $tabletSmallP1) {
+                padding-left: 4rem;
+                position: relative;
+            }
+
+            @media(min-width: $tabletP1) {
+                padding-left: 8rem;
+            }
+
+            @media(min-width: $deskLarge) {
+                padding-left: 5vw;
+            }
+
+            &:before {
+                content: '';
+                width: 1px;
+                height: 100%;
+                background-color: #ff4713;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+
+    .slick-slide {
+        padding: 0 4.4rem;
+
+        @media(min-width: $tabletSmallP1) {
+            padding: 0 1.6rem;
+        }
+
+    }
+
+    .slick-list {
+        margin: 0 -2.4rem;
+
+        @media(min-width: $tabletSmallP1) {
+            margin: 0 -1.6rem;
+        }
+
+    }
+}

@@ -1,0 +1,73 @@
+.modal-form {
+    background-color: #f7f9fa;
+    padding: 4rem 2rem;
+    box-sizing: border-box;
+
+    @media(min-width: $tabletP1) {
+        padding: 4rem;
+    }
+
+    @media(min-width: $deskLarge) {
+        padding: 4vw;
+    }
+
+    .modal-window__close-icon {
+        position: static;
+        margin: 0 0 0 auto;
+        display: flex;
+
+        @media(min-width: $deskLarge) {
+            position: absolute;
+            top: -12%;
+        }
+    }
+
+    // .modal-form__outer
+
+    &__outer {
+        position: relative;
+    }
+
+    h3 {
+        text-align: center;
+        margin-bottom: 2rem;
+
+        @media(min-width: $deskLarge) {
+            margin-bottom: 1.2vw;
+        }
+
+        br{
+            display: none;
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .field {
+        &:not(:first-of-type) {
+            margin-top: 1.4rem;
+
+            @media(min-width: $deskLarge) {
+                margin-top: .6vw;
+            }
+        }
+    }
+
+    .btn {
+        margin: 2rem 0 0 auto;
+
+        @media(min-width: $deskLarge) {
+            margin: 1vw 0 0 auto;
+        }
+    }
+
+    .wpcf7-not-valid-tip{
+        margin: 6px 0 0 6px!important;
+    }
+    .wpcf7-response-output{
+        display: none;
+    }
+}

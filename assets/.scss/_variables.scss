@@ -1,0 +1,47 @@
+// container
+$containerPaddingS: 3.2rem;
+$containerPaddingM: 3rem;
+$containerPadding: 5rem;
+$containerPaddingXL: 3.3vw;
+// Sizing
+
+$containerMaxWidth: 1920;
+$K2Large: 2200px;
+$deskXLarge: 1920px;
+$deskXLargeP1: $deskXLarge / 1px + 1px;
+$middleSqreen: 1799px;
+$deskLarge: 1599px;
+$deskLargeP1: $deskLarge / 1px + 1px;
+$desktop: 1440px;
+$desktopP1: $desktop / 1px + 1px;
+$tabletLarge: 1280px;
+$mobileMed: 650px;
+$tabletLargeP1: $tabletLarge / 1px + 1px;
+$tablet: 1024px; // @media (max-width: $tablet) --> 1024px and smaller
+$tabletP1: $tablet / 1px + 1px; // @media (min-width: $tabletP1) --> 1025px and bigger
+$tabletSmall: 767px;
+$tabletSmallP1: $tabletSmall / 1px + 1px;
+$mobile: 575px;
+$mobileP1: $mobile / 1px + 1px;
+$mobileSmall: 355px;
+$mobileSmallP1: $mobileSmall / 1px + 1px;
+
+// Adaptive Property Sizing
+$adaptivePropertyMaxViewport: $containerMaxWidth;
+$adaptivePropertyMinViewport: 375;
+
+
+// base
+
+
+$white: #fff;
+$black: #000;
+$transparent: rgba(128, 128, 128, 0);
+
+$primary: #404a5f;
+$secondary: #ff4713;
+$bg: #f7f9fa;
+
+// Fonts
+
+$primary-font: 'Source Sans Pro', sans-serif;

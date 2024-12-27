@@ -1,0 +1,125 @@
+.text-with-img {
+    box-sizing: border-box;
+    padding: 4rem 2rem;
+
+    @media(min-width: $tabletSmallP1) {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    @media(min-width: $tabletP1) {
+        padding: 4vw 6.1vw;
+    }
+
+    @media(min-width: $deskLarge) {
+        padding: 4.6vw 21vw 4.4vw;
+    }
+
+    // .text-with-img__text
+
+    &__text {
+
+        @media(min-width: $tabletSmallP1) {
+            width: 54%;
+        }
+
+        h2 {
+            @include adaptiveProperty('font-size', 42, 36);
+
+        }
+
+        p {
+            @include adaptiveProperty('font-size', 26, 22);
+            line-height: 1.4;
+            margin-top: 2rem;
+
+            @media(min-width: $tabletP1) {
+                margin-top: 3.6rem;
+            }
+
+            @media(min-width: $deskLarge) {
+                margin-top: 1.9vw;
+            }
+
+            &:not(:first-of-type) {
+                @media(min-width: $deskLarge) {
+                    margin-top: 2.1vw;
+                }
+            }
+        }
+
+        a {
+            @extend .link;
+            @include adaptiveProperty('font-size', 18, 16);
+
+            margin-top: 1.6rem;
+
+            @media(min-width: $tabletP1) {
+                margin-top: 2.8rem;
+            }
+
+            @media(min-width: $deskLarge) {
+                margin-top: 1.5vw;
+                padding-left: 1.5vw;
+            }
+
+            &:before {
+                @media(min-width: $deskLarge) {
+                    width: 1.1vw;
+                    height: 1.1vw;
+                }
+            }
+        }
+    }
+
+    // .text-with-img__wrapper
+
+    &__wrapper {
+        margin-top: 3rem;
+        @media(min-width: $tabletSmallP1) {
+            margin-top: 0;
+            position: relative;
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+    }
+
+    // .text-with-img__comment
+
+    &__comment {
+        margin-bottom: 1rem;
+        @media(min-width: $tabletP1) {
+            position: absolute;
+            width: 90%;
+        }
+        @media(min-width: $tabletLargeP1){
+            width: 60%;
+        }
+
+        strong {
+            margin-left: 0;
+        }
+    }
+
+    // .text-with-img__img
+
+    &__img {
+        width: 100%;
+
+        @media(min-width: $tabletP1) {
+            margin-top: 10rem;
+        }
+
+        @media(min-width: $deskLarge) {
+            margin-top: 5.2vw;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+}

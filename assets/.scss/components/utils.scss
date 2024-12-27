@@ -1,0 +1,48 @@
+.preload * {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+}
+
+
+.submenu {
+    display: none;
+
+    @media(min-width: $tabletLargeP1) {
+        border-bottom: 1px solid #a5b1be;
+    }
+
+    li {
+        padding: 0.7rem 0;
+        box-sizing: border-box;
+        width: 100%;
+
+        @media(min-width: $tabletLargeP1) {
+            background-color: #eff1f4;
+        }
+
+        @media(min-width: $deskLarge) {
+            padding: 0.4vw 0!important;
+        }
+
+        &:before {
+            display: none;
+        }
+    }
+
+    a {
+        width: 100%;
+        line-height: 1.2;
+    }
+}
+
+.hover-link{
+    &:hover{
+        .submenu{
+            @media(min-width: $tabletLargeP1){
+                display: block;
+            }
+        }
+    }
+}

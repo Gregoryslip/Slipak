@@ -1,0 +1,334 @@
+/* Header ---------------------------------------*/
+
+header#header{
+    padding: 8px 12vw;
+}
+header#header .header__logo-group{
+    margin-right: auto;
+}
+header#header .header__account{
+    justify-content: end;
+    margin-left: auto;
+    min-width: unset;
+    border-radius: 10vw;
+    padding: 0 0.6vw;
+}
+header#header .header__person{
+    max-width: unset;
+    height: auto;
+    margin-right: 0.5rem;
+}
+header#header .header__account svg{
+    width: 12px;
+    margin-top: 3px;
+}
+header#header .header__cta{
+    margin-left: 8px;
+    border-radius: 10vw;
+}
+header#header .header__menu{
+    padding: 0;
+    margin-top: 1px;
+}
+
+header#header .header__mobile-trigger{
+    position: absolute;
+    top: 17px;
+    right: 6.1vw;
+    z-index: 1;
+}
+
+/* Pricing ---------------------------------------*/
+
+.pricing-card__title{
+    min-height: unset;
+}
+
+.pricing-card{
+    border: none;
+}
+
+#pricing-section form{
+    /*max-width: 900px;*/
+    margin: 40px auto 0;
+}
+.item-active .pricing-card__title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    padding: 0 4.5rem 0;
+    background: transparent;
+}
+.item-active .pricing-card__title:before{
+    display: none;
+}
+.item-active .pricing-card__title .pricing__text{
+    margin: 0;
+    text-align: center;
+}
+.item-active .pricing-card__inner{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    padding: 2.6rem 2rem 4rem;
+    border: 1px solid #a5b1be;
+    border-radius: 8px;
+}
+.pricing-card__title h3{
+    font-size: 52px;
+    padding-bottom: 7px;
+    margin-bottom: 35px;
+}
+.pricing-card__title h3:before{
+    width: 8rem;
+    height: 3px;
+}
+.pricing-card__title h4{
+    display: block;
+    text-align: center;
+    font-size: 28px;
+    margin: 20px 10px 30px;
+}
+.pricing-card .select{
+    max-width: 175px;
+    margin: 10px auto 0;
+    border-radius: 10px;
+}
+.pricing-card .select:before{
+    top: 38%;
+}
+.pricing-card .select select{
+    padding: 9px 12px 8px;
+    border: solid 1px #404a5f;
+    border-radius: 10px;
+}
+
+.pricing__triggers{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.pricing__radio:not(:first-of-type){
+    margin-left: 1.1rem;
+}
+.pricing__currency-wrap{
+    margin: 0 0 0 auto;
+}
+.item-active .pricing-card__price{
+    margin: auto;
+}
+
+.pricing-card__price-place-wrap{
+    flex-direction: row;
+    margin: 0;
+}
+
+.pricing-card .center-flex{
+    margin: 15px 10px;
+}
+.item-active .pricing-card__price-symbol,
+.item-active .pricing-card__price-place{
+    font-size: 56px;
+}
+.pricing-card__price-left,
+.pricing-card__price-right{
+    font-size: 24px;
+}
+.pricing--annual .pricing-card__per-month{
+    display: block;
+}
+#pricing-section .pricing-card__monthly,
+#pricing-section .pricing-card__annually{
+    display: none;
+    position: relative;
+    font-size: 24px;
+    padding-bottom: 12px;
+}
+#pricing-section .pricing--month .pricing-card__monthly,
+#pricing-section .pricing--annual .pricing-card__annually{
+    display: block;
+}
+#pricing-section .pricing-card__monthly:after,
+#pricing-section .pricing-card__annually:after{
+    content: '';
+    width: 80%;
+    height: 3px;
+    background-color: #ff4713;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#pricing-section .taxes{
+    margin: 15px 0;
+    font-size: 16px;
+}
+.item-active .pricing-card__btn-wrapper{
+    margin: auto auto 0;
+}
+.pricing-card__inner .btn{
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1;
+    height: auto;
+    padding: 6px 20px 8px;
+}
+
+p.pricing-sub-text {
+    text-align: center;
+    font-style: italic;
+    margin-top: 1.3rem;
+}
+
+/* Responsive -------------------------------------------- */
+
+@media (min-width: 1025px){
+    header#header{
+        padding: 0.47vw 6.1vw;
+    }
+    .pricing {
+        padding: 3.1vw 6.1vw 3.9vw;
+    }
+}
+@media (min-width: 1599px){
+    header#header{
+        padding: 0.47vw 12vw;
+    }
+    .pricing {
+        max-width: unset;
+        padding: 3.3vw 12vw 1.7vw;
+    }
+}
+@media (min-width: 1921px){
+    header#header .header__person{
+        display: block;
+    }
+    header#header .header__account svg {
+        width: 0.67vw;
+        margin-right: 0.1vw;
+    }
+    header#header .header__cta{
+        margin-left: 0.5vw;
+    }
+}
+
+
+/* ------------------------------------------------------- */
+
+@media (max-width: 1280px){
+    header#header {
+        padding: 8px 6.1vw;
+        justify-content: normal;
+    }
+    header#header .header__menu{
+        padding: 0;
+        order: 1;
+        margin-left: 18px;
+    }
+    header#header .header__account{
+        margin-left: auto;
+        min-width: unset;
+        padding: 0 8px;
+    }
+    header#header .header__mobile-menu{
+        padding: 0 6.1vw;
+    }
+    header#header .header__mobile-menu ul{
+        padding-top: 17px;
+    }
+}
+
+@media (max-width: 1150px){
+    .item-active .pricing-card__title{
+        width: 45%;
+    }
+    .item-active .pricing-card__inner{
+        width: 55%;
+    }
+}
+
+@media (max-width: 980px){
+    .item-active .pricing-card__title{
+        width: 50%;
+    }
+    .item-active .pricing-card__inner{
+        width: 50%;
+    }
+}
+
+@media (max-width: 900px){
+    .pricing__triggers{
+        flex-direction: column;
+        padding-left: 3rem;
+    }
+    .pricing__currency-wrap {
+        margin: 10px 0 0;
+    }
+}
+
+@media (max-width: 768px){
+    header#header{
+        flex-direction: row;
+    }
+    header#header .header__account,
+    header#header .header__cta{
+        width: auto;
+        margin-top: 0;
+    }
+    header#header .header__menu{
+        width: auto;
+        margin-top: 1px;
+    }
+    #pricing-section form{
+        margin-top: 0;
+    }
+    .pricing__inner{
+        display: block;
+    }
+    .item-active .pricing-card__title,
+    .item-active .pricing-card__inner{
+        width: 100%;
+        padding: 2.6rem 4.5rem 4rem;
+    }
+    .pricing__triggers{
+        flex-direction: row;
+        padding: 0;
+    }
+    .pricing__currency-wrap{
+        margin: 0 0 0 auto;
+    }
+}
+
+@media (max-width: 600px){
+    .item-active .pricing-card__title,
+    .item-active .pricing-card__inner{
+        padding: 2.6rem 2rem 4rem;
+    }
+}
+@media (max-width: 500px){
+    /*html{
+        margin-top: 103px !important;
+    }*/
+    header#header .header__cta{
+        width: 100%;
+        margin: 10px 0 5px;
+        order: 2;
+    }
+    header#header .header__menu{
+        margin-left: 10px;
+    }
+    .pricing__triggers{
+        flex-direction: column;
+        margin-top: 10px;
+    }
+    .pricing__currency-wrap{
+        margin: 10px 0 0;
+    }
+}
+@media (max-width: 400px){
+    .pricing-card__price-left,
+    .pricing-card__price-right {
+        font-size: 20px;
+    }
+}

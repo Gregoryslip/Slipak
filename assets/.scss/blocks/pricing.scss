@@ -1,0 +1,516 @@
+.pricing {
+    box-sizing: border-box;
+    padding: 4rem 2rem;
+
+    @media(min-width: $tabletP1) {
+        padding: 4vw 6.1vw;
+    }
+
+    @media(min-width: $deskLarge) {
+        padding: 3.1vw 19vw 3.9vw;
+
+    }
+
+    @media(min-width: $middleSqreen) {
+        padding: 3.1vw 21vw 3.9vw;
+    }
+
+    .pricing-card {
+        &:not(:first-of-type) {
+            margin-top: 1.4rem;
+
+            @media(min-width: $mobileP1) {
+                margin-top: 0;
+            }
+        }
+    }
+
+    // .pricing__link
+
+    &__link {
+        display: flex;
+        justify-content: flex-end;
+        margin: 0 auto;
+
+        @media(min-width: $tabletLargeP1) {
+            max-width: 75rem;
+        }
+
+        @media(min-width: $deskXLargeP1) {
+            max-width: 38vw;
+        }
+
+        a {
+            margin-top: 1.7rem;
+
+            @media(min-width: $deskLarge) {
+                margin-top: 0.9vw;
+            }
+        }
+    }
+
+    // .pricing__text
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        margin-bottom: 2rem;
+
+        @media(min-width: $deskLarge) {
+            margin-bottom: 2.4vw;
+        }
+
+        h2 {
+            @include adaptiveProperty('font-size', 36, 28);
+        }
+
+        p {
+            @include adaptiveProperty('font-size', 18, 16);
+            line-height: 1.65;
+            margin-top: 2rem;
+            max-width: 75rem;
+
+            @media(min-width: $deskLarge) {
+                margin-top: 1.1vw;
+            }
+
+            @media(min-width: $deskXLargeP1) {
+                max-width: 38vw;
+            }
+        }
+
+        strong {
+            font-weight: 700;
+        }
+    }
+
+    // .pricing__outer
+
+    &__outer {}
+
+    // .pricing__triggers
+
+    &__triggers {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+
+        @media(min-width: $mobileP1) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        @media(min-width: $tabletP1) {
+            justify-content: flex-start;
+        }
+    }
+
+    // .pricing__monthly-annually
+
+    &__monthly-annually {
+        display: flex;
+    }
+
+    // .pricing__radio
+
+    &__radio {
+        @include adaptiveProperty('font-size', 12, 12);
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        padding-left: 1.6rem;
+
+        @media(min-width: $deskLarge) {
+            padding-left: 0.9vw;
+        }
+
+        &:not(:first-of-type) {
+            margin-left: 2.2vw;
+        }
+
+        &:before {
+            content: '';
+            width: 1.6rem;
+            height: 1.6rem;
+            border-radius: 50%;
+            border: 1px solid #a7b3c0;
+            background-color: #f0f3f6;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+
+            @media(min-width: $deskLarge) {
+                width: 0.8vw;
+                height: 0.8vw;
+            }
+        }
+
+
+
+        input {
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+    }
+
+    // .pricing__label
+
+    &__label {
+        &:after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ff4713;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: block;
+            left: 4px;
+            box-sizing: border-box;
+            opacity: 0;
+            transition: .2s ease-in-out;
+
+            @media(min-width: $deskLarge) {
+                width: 0.45vw;
+                height: 0.45vw;
+                left: 0.2vw;
+            }
+        }
+    }
+
+    .pricing__radio input[type="radio"]:checked+.pricing__label {
+        color: $secondary;
+        text-shadow: 0 0 1px #ff4713;
+
+        &:after {
+            opacity: 1;
+        }
+    }
+
+
+
+
+
+    // .pricing__currency-wrap
+
+    &__currency-wrap {
+        display: flex;
+        margin-top: 1.4rem;
+
+        @media(min-width: $mobileP1) {
+            margin-top: 0;
+        }
+
+        @media(min-width: $tabletSmallP1) {
+            margin-left: 3.1vw;
+        }
+
+    }
+
+    // .pricing__currency
+
+    &__currency {
+        cursor: pointer;
+        @include adaptiveProperty('font-size', 14, 14);
+
+        &:not(:first-of-type) {
+            margin-left: 1rem;
+
+            @media(min-width: $deskLarge) {
+                margin-left: .6vw;
+            }
+        }
+
+        input {
+            cursor: pointer;
+            width: 0;
+            height: 0;
+            opacity: 0;
+            display: none;
+        }
+
+    }
+
+    .pricing__currency input[type="radio"]:checked+.pricing__label {
+        color: $secondary;
+        -webkit-text-stroke: 1px #ff4713;
+
+    }
+
+    // .pricing__inner
+
+    &__inner {
+        margin-top: 1.2rem;
+        position: relative;
+
+        @media(min-width: $mobileP1) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.8rem;
+        }
+
+        @media(min-width: $tabletLargeP1) {
+            grid-template-columns: 23.25% 23.25% 23.25% 23.25%;
+            gap: 2.25%;
+        }
+
+        @media(min-width: $deskLarge) {
+            margin-top: .7vw;
+        }
+    }
+
+    // .pricing__foot
+
+    &__foot {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2.6rem 3rem;
+        box-sizing: border-box;
+        border: 1px solid #a5b1be;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-top: 2rem;
+
+        @media(min-width: $tabletSmallP1) {
+            flex-direction: row;
+        }
+
+        @media(min-width: $deskLarge) {
+            padding: 1.4vw 1.6vw;
+            margin-top: 1.05vw;
+        }
+
+        strong {
+            font-weight: 700;
+        }
+
+        h4 {
+            @include adaptiveProperty('font-size', 27, 26);
+            font-weight: 600;
+            text-align: center;
+
+            @media(min-width: $tabletSmallP1) {
+                text-align: left;
+            }
+
+        }
+
+        p {
+            @include adaptiveProperty('font-size', 20, 16);
+            line-height: 1.2;
+            margin-top: 0.6rem;
+            text-align: center;
+
+            @media(min-width: $tabletSmallP1) {
+                text-align: left;
+            }
+
+            @media(min-width: $deskLarge) {
+                margin-top: .3vw;
+            }
+        }
+
+        .btn {
+            @include adaptiveProperty('font-size', 16, 14);
+            margin-top: 2rem;
+            flex-shrink: 0;
+
+            @media(min-width: $tabletSmallP1) {
+                margin-top: 0;
+                margin-left: 2rem;
+            }
+        }
+    }
+
+    // .pricing__foot-link
+
+    &__foot-link{
+        display: flex;
+        justify-content: flex-end;
+        margin: 1.6rem 0;
+        a{
+            @extend .link;
+        }
+    }
+
+    // .pricing__left
+
+    &__left {
+        .btn {
+            @include adaptiveProperty('font-size', 16, 16);
+            min-width: 165px;
+
+            @media(min-width: $deskLarge) {
+                height: 2.4vw;
+            }
+        }
+    }
+
+    // .pricing--three-col
+    // .pricing--two-col
+
+    &--three-col,
+    &--two-col {
+
+        @media(min-width: $tabletP1) and (max-width: $deskLarge) {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        @media(min-width: $deskLargeP1) {
+            width: 97%;
+            margin: 0 auto;
+        }
+
+        .pricing__inner {
+
+            @media(min-width: $tabletLargeP1) {
+                display: flex;
+                justify-content: center;
+                gap: unset;
+            }
+
+            @media(min-width: $deskLarge) {
+                margin-top: .7vw;
+            }
+        }
+
+        .pricing-card {
+            @media(min-width: $tabletLargeP1) {
+                max-width: 36rem;
+                width: 100%;
+            }
+
+            @media(min-width: $deskLarge) {
+                max-width: 19vw;
+            }
+
+            &:not(:first-of-type) {
+                @media(min-width: $tabletLargeP1) {
+                    margin-left: 1.6rem;
+                }
+            }
+        }
+
+        .item-active {
+            max-width: 100%;
+        }
+
+        .btn {
+            @media(min-width: $deskLarge) {
+                max-width: 12vw;
+            }
+        }
+
+        .pricing-card__tag {
+            @media(min-width: $deskLarge) {
+                transform: translate(-20%, -50%) rotate(-25deg);
+            }
+        }
+    }
+
+    // .pricing--two-col 
+
+    &--two-col {
+        width: 100%;
+
+        @media(min-width: $tabletLargeP1) {
+            padding: 4vw 25.2vw;
+        }
+
+        @media(min-width: $deskLarge) {
+            padding: 3.1vw 30.6vw 3.9vw;
+        }
+
+        .pricing-card {
+            .pricing-card__title {
+                @media(min-width: $deskLarge) {
+                    padding: 1.4vw 2.2vw 1.1vw;
+                }
+
+                p {
+                    br {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .pricing-card__tag {
+            @media(min-width: $tabletP1) {
+                transform: translate(20%, -10%) rotate(-25deg);
+            }
+        }
+    }
+
+    // .pricing--one-col
+
+    &--one-col {
+
+        .item-active {
+            max-width: 100%;
+        }
+
+        .pricing__triggers {
+            @media(min-width: $tabletP1) {
+                justify-content: center;
+            }
+        }
+
+        .pricing__inner {
+            display: flex;
+            justify-content: center;
+            gap: unset;
+        }
+
+        .pricing-card {
+            max-width: 42rem;
+            width: 100%;
+
+            @media(min-width: $deskLarge) {
+                max-width: 22vw;
+            }
+
+            &:not(:first-of-type) {
+                @media(min-width: $tabletLargeP1) {
+                    margin-left: 1.6rem;
+                }
+            }
+        }
+
+        .btn {
+            @media(min-width: $deskLarge) {
+                max-width: 12vw;
+            }
+        }
+
+        .pricing-card__tag {
+            @media(min-width: $deskLarge) {
+                transform: translate(-20%, -50%) rotate(-25deg);
+            }
+        }
+    }
+}
+
+.pricing--month {
+    .pricing-card__annually {
+        display: none;
+    }
+}
+
+.pricing--annual {
+    .pricing-card__per-month {
+        display: none;
+    }
+}
