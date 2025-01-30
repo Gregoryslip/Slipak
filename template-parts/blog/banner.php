@@ -14,13 +14,13 @@ if ($cat){
     $img = get_field('banner__image');
 }
 ?>
-<section class=" bg-white mt-[80]">
-  <div class="w-full flex flex-col items-center">
+<section class=" bg-white mt-[80] px-[16px]">
+  <div class="w-full max-w-[1400px] flex flex-col items-center">
     <div class="breadcrumbs w-full text-center">
                 <?php  get_template_part('template-parts/breadcrumbs'); ?>
             </div>
-            <h1 class="mt-[20px]"><?= $title; ?></h1>
-            <div class="flex content-center">
+            <h1 class="mt-[20px] text-[30px] lg:text-[40px] threa tracking-[-.1px]"><?= $title; ?></h1>
+            <div class="flex content-center w-full">
               <?php  get_template_part('template-parts/blog/search-form'); ?>
             </div>
             

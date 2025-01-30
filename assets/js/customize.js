@@ -21,10 +21,13 @@ if($('.articles-related__slider')){
   const blogCatSwiper = new Swiper ('.articles-related__slider',{
     loop: true,
     slidesPerView: 'auto', // Allow slides to fit content
-  spaceBetween: 10,      // Optional: Add spacing between slides
+  spaceBetween: 20,      // Optional: Add spacing between slides
   breakpoints: {
-    768: {
+    992: {
       slidesPerView: 4, // For larger screens, show exactly 6 slides
+    },
+    768: {
+      slidesPerView: 2, // For larger screens, show exactly 6 slides
     },
     320: {
       slidesPerView: 'auto', // For smaller screens, fit to content

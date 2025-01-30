@@ -24,8 +24,8 @@ $downloadTemplate = $downloadTemplate ? $downloadTemplate : get_field('single-ar
   <div class="my-[40px] border border-solid border-bottom border-[#E2E8ED] h-[1px]"></div>
     <img class="w-full max-w-[170px] mx-auto" src="<?= get_template_directory_uri();?>/assets/image/blog/article-start.svg" alt="Model - Forecast - Plan">
     <div class="text-[#2D3646] leading-[28px] text-[18px] font-semibold text-center mt-[21px]">Start Brixx 7 days trial</div>
-    <a href="https://app.brixx.com/sign-up/trial?utm_source=split_test&amp;utm_campaign=headercta" class=" mt-[23px] inline-block">
-        <button type="button" class="bg-[#FF4713] text-white font-medium rounded-sm w-[270px] h-[54px] flex justify-center items-center transition-transform hover:scale-105">
+    <a href="https://app.brixx.com/sign-up/trial?utm_source=split_test&amp;utm_campaign=headercta" class="w-full max-w-[270px] mt-[23px] inline-block">
+        <button type="button" class="bg-[#FF4713] text-white font-medium rounded-sm w-full h-[54px] flex justify-center items-center transition-transform hover:scale-105">
             Start for FREE
         </button>
     </a>

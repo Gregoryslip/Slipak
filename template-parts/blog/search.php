@@ -17,7 +17,7 @@ $maxPage = $query->max_num_pages;
  
           <?php  get_template_part('template-parts/blog/search-form', false, ['s' => $s]); ?>
       
-    <div class="archive__top px-[6vw]">
+    <div class="archive__top max-w-[1400px] px-[20px] mx-auto">
 
         
         <?php get_template_part('template-parts/blog/categories-nav', false, ['cat' => $category]); ?>
@@ -29,13 +29,13 @@ $maxPage = $query->max_num_pages;
     
     </div>
 
-<section class="archive">
+<section class="bg-[#F7F9FA] py-[60px] px-0">
     <input type="hidden" name="query" value='<?= json_encode($args); ?>'>
     <input type="hidden" name="maxPage" value="<?= $maxPage; ?>">
 
     
 
-    <div class="archive__outer">
+    <div class="max-w-[1400px] px-[20px] mx-auto">
         <?php if($query->have_posts()): ?>
             <div class="archive__items" data-archive-body>
                 <?php

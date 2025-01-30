@@ -94,6 +94,7 @@ html .archive-card.archive-card__template{
 }
 html .archive__links a, html .archive__links span{
   line-height: 18px;
+  font-size: 16px;
 }
 
 html .archive .archive-search{
@@ -141,6 +142,11 @@ html .article section.content{
   background: #fff;
   margin: 26px 0;
   
+}
+@media (max-width: 991px) {
+  html .article section.content {
+      padding:20px;
+  }
 }
 html .article section.content:first-of-type{
   margin-top: 0;

@@ -30,7 +30,7 @@ $maxPage = $query->max_num_pages;
 $maxPageNewQuery = $newQuery->max_num_pages;
 $counter = 0;
 ?>
-<section class="archive">
+<section class="bg-[#F7F9FA] py-[60px] px-0">
     <input type="hidden" name="query" value='<?= json_encode($args); ?>'>
     <input type="hidden" name="maxPage" value="<?= $maxPage; ?>">
     <input type="hidden" name="has_template_appender" value="1">
@@ -43,11 +43,11 @@ $counter = 0;
         ?>
     </div>-->
 
-    <div class="archive__outer">
+    <div class="max-w-[1400px] px-[20px] mx-auto">
         <?php //get_template_part('template-parts/blog/main-article', false, ['main_article' => $mainArticle, 'popular_articles' => $popularArticles]); ?>
 
         <?php if($query->have_posts()): ?>
-            <div class="archive__items" data-archive-body>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[20px]" data-archive-body>
                 <?php
                 while ($query->have_posts()): $query->the_post();
                     $counter++;

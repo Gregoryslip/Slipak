@@ -12,9 +12,9 @@ $href = isset($args['href']) ? esc_url($args['href']) : '#';
 ?>
 
 
-    <div class="archive-card bg-white flex flex-col justify-between">
+    <div class="bg-white flex flex-col justify-between">
       <div class="card-content__bg flex-1" style="background-image: url('<?php echo $bg_image; ?>'); background-size: cover; background-position: center;">
-        <div class="flex flex-col justify-between h-full">
+        <div class="flex flex-col justify-between h-full min-h-[360px]">
           <div class="top py-[25px] px-[30px]">
             <h2 class="text-[28px] <?= $title_class; ?> leading-[38px] font-semibold "><?php echo $title; ?>
             <div class="italic <?= $title_span_class; ?>"><?= $title_span; ?></div>
@@ -25,7 +25,7 @@ $href = isset($args['href']) ? esc_url($args['href']) : '#';
           <ul class="features-list text-base text-white px-[26px] py-[20px] bg-white/10 backdrop-blur-lg">
             <?php foreach ($features as $feature) : ?>
                 <li class="flex items-center">
-                    <svg class="w-4 h-4 text-white mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg class="w-4 h-4 text-white mr-2 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                     </svg>
                     <?php echo esc_html($feature); ?>
@@ -34,7 +34,7 @@ $href = isset($args['href']) ? esc_url($args['href']) : '#';
           </ul>
         </div>
       </div>
-      <div class=" h-[24%] flex justify-center items-center">
+      <div class="p-[32px] flex justify-center items-center">
             
         <a href="<?php echo $href; ?>" class="bg-[#FF4713] text-white font-semibold text-[17px] rounded-sm h-[54px] w-[174px] flex justify-center items-center transition-transform hover:scale-105">
             FREE download
