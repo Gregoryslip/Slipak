@@ -1,6 +1,8 @@
 <?php
 $banner = get_field('single-article__banner', 'option');
 $categories = get_the_category();
+$post_url = urlencode(get_permalink());
+$post_title = urlencode(get_the_title());
 ?>
 <section class="hero-small hero-small--article flex justify-center flex-col items-center">
     <div class="breadcrumbs">
@@ -16,10 +18,20 @@ $categories = get_the_category();
     </div>
     <div class="mt-[24px] flex gap-[14px] uppercase text-[17px] text-[#79808B] leading-[34px] font-semibold"><?php the_author(); ?><span>|</span>11min read <span>|</span><?php the_modified_date('j F Y'); ?></div>
     <div class="flex gap-[20px] mt-[14px]">
-      <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/image/icons/fb-black.svg" alt=""></a>
-      <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/image/icons/x-black.svg" alt=""></a>
-      <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/image/icons/lin-black.svg" alt=""></a>
-      <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/image/icons/tg-black.svg" alt=""></a>
-      <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/image/icons/wa-black.svg" alt=""></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=<?= $post_url; ?>" target="_blank" rel="noopener noreferrer">
+        <img src="<?= get_template_directory_uri(); ?>/assets/image/icons/fb-black.svg" alt="Share on Facebook">
+      </a>
+      <a href="https://twitter.com/intent/tweet?url=<?= $post_url; ?>&text=<?= $post_title; ?>" target="_blank" rel="noopener noreferrer">
+        <img src="<?= get_template_directory_uri(); ?>/assets/image/icons/x-black.svg" alt="Share on Twitter">
+      </a>
+      <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?= $post_url; ?>&title=<?= $post_title; ?>" target="_blank" rel="noopener noreferrer">
+        <img src="<?= get_template_directory_uri(); ?>/assets/image/icons/lin-black.svg" alt="Share on LinkedIn">
+      </a>
+      <a href="https://t.me/share/url?url=<?= $post_url; ?>&text=<?= $post_title; ?>" target="_blank" rel="noopener noreferrer">
+        <img src="<?= get_template_directory_uri(); ?>/assets/image/icons/tg-black.svg" alt="Share on Telegram">
+      </a>
+      <a href="https://api.whatsapp.com/send?text=<?= $post_title; ?>%20<?= $post_url; ?>" target="_blank" rel="noopener noreferrer">
+        <img src="<?= get_template_directory_uri(); ?>/assets/image/icons/wa-black.svg" alt="Share on WhatsApp">
+      </a>
     </div>
 </section>

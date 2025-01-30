@@ -60,20 +60,42 @@ $counter = 0;
         <?php if($query->have_posts()): ?>
             <div class="archive__items" data-archive-body>
                 <?php
+                  $template_post = get_post(21478);
+                  $template_title = get_the_title($template_post->ID);
+                  $template_title_span = get_field('post__subtitle', $template_post->ID);
+                  $template_features = get_field('features', $template_post->ID);
+                  $template_button = get_field('post__button', $template_post->ID);
+
+                  $features_array = [];
+                  if ($template_features) {
+                      foreach ($template_features as $feature) {
+                          $features_array[] = $feature['feature']['title'];
+                      }
+                  }
 
                   get_template_part('template-parts/blog/template-item', null, [
-                    'bg-image' => get_template_directory_uri() . '/assets/image/blog/template1.svg',
-                    'title' => 'FREE Business Plan',
+                    'bg-image' => get_the_post_thumbnail_url($template_post->ID, 'full'),
+                    'title' => $template_title,
                     'title_class' => 'text-[#2D3646]',
-                    'title_span' => 'Template',
+                    'title_span' => $template_title_span,
                     'title_span_class' => 'text-[#FF4713]',
-                    'feature-item' => [
-                        'Google Docs template',
-                        'Simple to use',
-                        'Resources and guides availableTemplate for 12 months',
-                    ],
-                    'href' => '#',
+                    'feature-item' => $features_array,
+                    'href' => $template_button['url'],
                   ]);
+
+                  // get_template_part('template-parts/blog/template-item', null, [
+                  //   'bg-image' => get_template_directory_uri() . '/assets/image/blog/template1.svg',
+                  //   'title' => 'FREE Business Plan',
+                  //   'title_class' => 'text-[#2D3646]',
+                  //   'title_span' => 'Template',
+                  //   'title_span_class' => 'text-[#FF4713]',
+                  //   'feature-item' => [
+                  //       'Google Docs template',
+                  //       'Simple to use',
+                  //       'Resources and guides availableTemplate for 12 months',
+                  //   ],
+                  //   'href' => '#',
+                  // ]);
 
 
                 while ($query->have_posts()): $query->the_post();
